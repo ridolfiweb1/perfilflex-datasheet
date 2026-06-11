@@ -1,0 +1,3217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Catálogo PerfilFlex - Linha TPU</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --primary: #39a627;
+            --black: #1a1a1a;
+            --dark-gray: #333333;
+            --medium-gray: #777777;
+            --light-gray: #f4f5f7;
+            --border: #e2e8f0;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: var(--dark-gray);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: var(--white);
+            color: var(--black);
+            padding: 42px 30px 38px;
+            text-align: center;
+            border-top: 8px solid var(--primary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-img {
+            max-height: 118px;
+            max-width: 420px;
+            width: min(420px, 88%);
+            margin-bottom: 24px;
+            object-fit: contain;
+        }
+
+        .header h1 {
+            margin: 0 0 15px 0;
+            font-size: 2.5rem;
+            color: var(--black);
+            letter-spacing: 1px;
+        }
+
+        .header h1 span {
+            color: var(--primary);
+        }
+
+        .header p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 40px 50px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+            color: var(--black);
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-card p {
+            margin-bottom: 0;
+            color: var(--medium-gray);
+            text-align: justify;
+        }
+
+        .development-panel {
+            margin: 10px 0 50px;
+            padding: 34px;
+            background: linear-gradient(135deg, #f4f5f7 0%, #ffffff 100%);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .development-panel i {
+            display: block;
+            margin-bottom: 14px;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .development-panel h2 {
+            margin: 0 0 10px;
+            color: var(--black);
+            font-size: 1.55rem;
+        }
+
+        .development-panel p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: var(--medium-gray);
+        }
+
+        .legacy-content {
+            display: none;
+        }
+
+        .classification-page {
+            width: min(100%, 210mm);
+            margin: 0 auto;
+            padding: 6mm;
+            background: var(--white);
+        }
+
+        .classification-heading {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 8px;
+        }
+
+        .classification-heading img {
+            width: 100%;
+            max-height: 62px;
+            object-fit: contain;
+        }
+
+        .classification-heading h1 {
+            margin: 0;
+            color: var(--black);
+            font-size: 2rem;
+            line-height: 1;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .profiles-placeholder {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 5px;
+            height: 126px;
+            margin-bottom: 7px;
+        }
+
+        .profile-slot {
+            display: grid;
+            place-items: center;
+            border: 1px dashed var(--primary);
+            border-radius: 3px;
+            color: #568c4d;
+            background: #f4faf3;
+            font-size: 0.58rem;
+            text-transform: uppercase;
+        }
+
+        .classification-table-wrap {
+            overflow-x: auto;
+            border: 1px solid #202020;
+        }
+
+        .classification-table {
+            min-width: 0;
+            table-layout: fixed;
+            color: var(--dark-gray);
+            font-size: 0.71rem;
+            line-height: 1.05;
+        }
+
+        .classification-table th,
+        .classification-table td {
+            height: 20px;
+            padding: 2px 4px;
+            border: 1px solid #202020;
+            font-size: inherit;
+            white-space: nowrap;
+        }
+
+        .classification-table thead th {
+            background: var(--black);
+            color: var(--white);
+            font-size: 0.84rem;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .classification-table .model-heading {
+            background: var(--primary);
+            font-size: 1rem;
+        }
+
+        .classification-table .subheading {
+            background: #f2f2f2;
+            color: #111;
+            font-size: 0.58rem;
+        }
+
+        .classification-table .application-heading {
+            background: var(--primary);
+            font-size: 1rem;
+        }
+
+        .classification-table .vertical-heading {
+            height: 92px;
+            padding: 3px 0;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            background: #f2f2f2;
+            color: var(--black);
+            font-size: 0.72rem;
+        }
+
+        .classification-table .equipment {
+            background: #f7f7f7;
+            font-weight: 500;
+        }
+
+        .classification-table .code,
+        .classification-table .measure,
+        .classification-table .channel {
+            color: #257d1b;
+            font-weight: 600;
+        }
+
+        .classification-table .development-row td {
+            background: #dff1dc;
+        }
+
+        .country {
+            float: right;
+            margin-left: 5px;
+            font-size: 0.9rem;
+        }
+
+        .classification-note {
+            margin: 7px 0 0;
+            padding: 5px 8px;
+            border-left: 5px solid var(--primary);
+            background: #dff1dc;
+            color: var(--dark-gray);
+            font-size: 0.72rem;
+        }
+
+        .catalog-page {
+            width: min(100%, 210mm);
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 7mm;
+            background: var(--white);
+            break-before: page;
+            page-break-before: always;
+        }
+
+        .catalog-topbar {
+            display: grid;
+            grid-template-columns: 190px 72px 1fr;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 12px;
+        }
+
+        .catalog-logo {
+            width: 100%;
+            max-height: 70px;
+            object-fit: contain;
+        }
+
+        .qr-placeholder {
+            display: grid;
+            place-items: center;
+            width: 62px;
+            height: 62px;
+            border: 2px dashed var(--primary);
+            color: var(--primary);
+            font-size: 0.68rem;
+            font-weight: 700;
+        }
+
+        .catalog-identification {
+            text-align: right;
+        }
+
+        .catalog-label {
+            display: block;
+            color: var(--medium-gray);
+            font-size: 1.7rem;
+            font-weight: 300;
+        }
+
+        .catalog-code {
+            display: block;
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+
+        .catalog-title {
+            margin: 0 0 16px;
+            padding: 7px 12px;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.15;
+            text-align: center;
+        }
+
+        .catalog-model {
+            margin: 0 0 16px;
+            color: var(--dark-gray);
+            font-size: 0.82rem;
+            line-height: 1.35;
+        }
+
+        .catalog-model strong {
+            color: var(--primary);
+        }
+
+        .specification-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 0.68fr 0.35fr 1.55fr 0.9fr;
+            margin-bottom: 18px;
+            border: 1px solid var(--border);
+            background: var(--light-gray);
+        }
+
+        .specification-item {
+            min-height: 58px;
+            padding: 8px 10px;
+            border-right: 1px solid var(--white);
+            font-size: 0.72rem;
+            line-height: 1.25;
+        }
+
+        .specification-item:last-child {
+            border-right: 0;
+        }
+
+        .specification-label {
+            display: block;
+            margin-bottom: 3px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .friction-table {
+            width: 100%;
+            min-width: 0;
+            border-collapse: collapse;
+            font-size: 0.68rem;
+        }
+
+        .friction-table th,
+        .friction-table td {
+            padding: 2px 5px;
+            border: 1px solid var(--white);
+            line-height: 1.1;
+        }
+
+        .friction-table th {
+            background: var(--primary);
+            color: var(--white);
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .catalog-visual-row {
+            display: grid;
+            grid-template-columns: 210px 1fr 220px;
+            align-items: end;
+            gap: 20px;
+            min-height: 175px;
+            margin-bottom: 14px;
+        }
+
+        .technical-drawing-placeholder {
+            display: grid;
+            place-items: center;
+            width: 180px;
+            height: 165px;
+            border: 1px dashed var(--primary);
+            background: #f4faf3;
+            color: #568c4d;
+            font-size: 0.72rem;
+            text-align: center;
+        }
+
+        .technical-drawings {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .technical-drawings .technical-drawing-placeholder {
+            width: 150px;
+        }
+
+        .catalog-visual-row.two-drawings {
+            grid-template-columns: 315px 1fr 220px;
+        }
+
+        .catalog-visual-row.three-drawings {
+            grid-template-columns: 470px 1fr 220px;
+        }
+
+        .catalog-visual-row.four-drawings {
+            grid-template-columns: 630px 1fr 220px;
+        }
+
+        .technical-drawings.three .technical-drawing-placeholder {
+            width: 145px;
+        }
+
+        .technical-drawings.four .technical-drawing-placeholder {
+            width: 145px;
+        }
+
+        .application-table {
+            width: 100%;
+            min-width: 0;
+            border-collapse: collapse;
+            font-size: 0.68rem;
+        }
+
+        .application-table th,
+        .application-table td {
+            padding: 4px 6px;
+            border: 1px solid var(--white);
+            background: #dff1dc;
+            line-height: 1.1;
+        }
+
+        .application-table th {
+            background: var(--primary);
+            color: var(--white);
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .application-table td:last-child {
+            width: 42px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .dimension-table {
+            width: 100%;
+            min-width: 0;
+            table-layout: fixed;
+            border-collapse: collapse;
+            font-size: 0.61rem;
+        }
+
+        .dimension-table th,
+        .dimension-table td {
+            height: 25px;
+            padding: 3px 4px;
+            border: 1px solid var(--black);
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .dimension-table thead th {
+            background: #dff1dc;
+            color: var(--black);
+            font-size: 0.59rem;
+            letter-spacing: 0;
+        }
+
+        .dimension-table .dimension-subhead th {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .dimension-table td:first-child,
+        .dimension-table td:nth-child(2) {
+            text-align: left;
+        }
+
+        .sustainability-banner {
+            margin-top: 18px;
+            padding: 8px 12px;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 1.25rem;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .catalog-page-paired {
+            display: flex;
+            flex-direction: column;
+            gap: 8mm;
+        }
+
+        .shared-catalog-header {
+            display: grid;
+            grid-template-columns: 240px 86px 1fr;
+            align-items: center;
+            gap: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .shared-catalog-header .catalog-logo {
+            max-height: 86px;
+        }
+
+        .shared-catalog-header .qr-placeholder {
+            width: 76px;
+            height: 76px;
+        }
+
+        .shared-catalog-heading {
+            text-align: right;
+        }
+
+        .shared-catalog-heading strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        .shared-catalog-title {
+            margin: 0;
+        }
+
+        .catalog-entry-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 5px;
+            padding: 4px 7px;
+            border-left: 5px solid var(--primary);
+            background: var(--light-gray);
+        }
+
+        .catalog-entry-heading .catalog-model {
+            margin: 0;
+        }
+
+        .catalog-entry-heading .catalog-code {
+            flex: 0 0 auto;
+        }
+
+        .catalog-entry {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .catalog-entry + .catalog-entry {
+            padding-top: 6mm;
+            border-top: 2px solid var(--primary);
+        }
+
+        .weight-page {
+            width: min(100%, 210mm);
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 7mm;
+            background: var(--white);
+            break-before: page;
+            page-break-before: always;
+        }
+
+        .weight-page-title {
+            color: var(--black);
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            text-align: right;
+        }
+
+        .weight-table {
+            width: 100%;
+            min-width: 0;
+            table-layout: fixed;
+            border-collapse: collapse;
+            color: var(--dark-gray);
+            font-size: 0.62rem;
+        }
+
+        .weight-table th,
+        .weight-table td {
+            height: 20px;
+            padding: 2px 4px;
+            border: 1px solid var(--black);
+            line-height: 1.05;
+        }
+
+        .weight-table thead th {
+            background: var(--black);
+            color: var(--white);
+            font-size: 0.65rem;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+
+        .weight-table thead .weight-group-heading {
+            background: var(--primary);
+        }
+
+        .weight-table tbody tr:nth-child(even) td:not(.weight-manufacturer) {
+            background: #f6f7f7;
+        }
+
+        .weight-manufacturer {
+            background: #dff1dc;
+            color: var(--black);
+            font-weight: 700;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .weight-number {
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .classification-page + .legacy-content,
+        body > .container > .header,
+        .info-grid,
+        .development-panel,
+        .contact-footer {
+            display: none;
+        }
+
+        .product-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            margin: 0;
+            font-size: 1.6rem;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background-color: var(--primary);
+            margin-right: 12px;
+            border-radius: 3px;
+        }
+
+        .product-image {
+            max-height: 80px;
+            max-width: 200px;
+            object-fit: contain;
+        }
+
+        .product-gallery {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .product-gallery img {
+            max-height: 78px;
+            max-width: 128px;
+            object-fit: contain;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+            background-color: var(--white);
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        th:last-child, td:last-child {
+            border-right: none;
+        }
+
+        thead th {
+            background-color: var(--black);
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        thead th.highlight {
+            background-color: var(--primary);
+        }
+
+        .term-soft {
+            display: inline-block;
+            font-size: 0.82em;
+            font-weight: 500;
+            text-transform: none;
+        }
+
+        .profile-diagram-cell {
+            background-color: #f4f4f4 !important;
+            padding: 2px 10px;
+            border-right: 1px solid var(--border) !important;
+            width: 176px;
+        }
+
+        .profile-diagram-cell img {
+            display: block;
+            max-width: 150px;
+            max-height: 96px;
+            margin: 0 auto;
+            object-fit: contain;
+        }
+
+        .profile-icon-row td {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            padding: 8px 10px;
+            height: 54px;
+        }
+
+        .profile-side-label {
+            background-color: var(--light-gray) !important;
+            color: var(--black);
+            font-weight: 600;
+            text-align: center !important;
+            vertical-align: middle;
+            min-width: 160px;
+        }
+
+        .profile-table-image {
+            display: block;
+            max-width: 88px;
+            max-height: 58px;
+            margin: 0 auto;
+            object-fit: contain;
+        }
+
+        .profile-table-image.wide {
+            max-width: 170px;
+            max-height: 70px;
+        }
+
+        .profile-image-with-t {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-image-with-t::after {
+            content: '*';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2px;
+            color: var(--white);
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .profile-image-with-t.profile-vb::after {
+            content: '*';
+        }
+
+        .profile-image-with-t.profile-penta::after {
+            padding-top: 9px;
+        }
+
+        .profile-image-with-topbar {
+            position: relative;
+            display: inline-block;
+            padding-top: 6px;
+        }
+
+        .profile-image-with-topbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 6px;
+            right: 6px;
+            height: 6px;
+            background: repeating-linear-gradient(
+                to right,
+                #15a34a 0 8px,
+                transparent 8px 16px
+            );
+        }
+
+        .profile-dot {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .profile-dot.orange {
+            background-color: #ff8117;
+        }
+
+        .profile-dot.blue {
+            background-color: #1f4c82;
+        }
+
+        .profile-dot.green {
+            background-color: #4c6427;
+        }
+
+        .profile-dot.black {
+            background-color: #000000;
+        }
+
+        .profile-dot.join {
+            position: relative;
+        }
+
+        .profile-dot.join::after {
+            content: '*';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2px;
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        tbody tr:hover {
+            background-color: #f2f9f1;
+        }
+
+        .sub-header th {
+            background-color: var(--light-gray);
+            color: var(--black);
+            font-weight: 700;
+            border-top: 3px solid var(--primary);
+            border-bottom: 2px solid var(--border);
+            white-space: pre-line;
+        }
+
+        tbody td:not(.row-header) {
+            white-space: nowrap;
+        }
+
+        .row-header {
+            font-weight: 600;
+            background-color: var(--light-gray);
+            text-align: left !important;
+            color: var(--black);
+        }
+
+        .badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* ── RODAPÉ MODERNO ───────────────────────────────────────── */
+        .contact-footer {
+            margin-top: 14px;
+            background: #192b1b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(57,166,39,0.12) 1px, transparent 1px);
+            background-size: 16px 16px;
+            pointer-events: none;
+        }
+
+        .contact-footer-main {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr 1px 1fr;
+            align-items: center;
+            gap: 0;
+            padding: 32px 40px;
+        }
+
+        /* Coluna 1 — logo */
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 30px 0 0;
+        }
+
+        .footer-brand-card {
+            background: #ffffff;
+            border: none;
+            border-radius: 16px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .footer-brand img {
+            width: 100%;
+            max-width: 260px;
+            max-height: 130px;
+            object-fit: contain;
+        }
+
+        /* Divisores verticais */
+        .footer-divider {
+            width: 1px;
+            align-self: stretch;
+            min-height: 130px;
+            background: linear-gradient(180deg, transparent 0%, #39a627 25%, #39a627 75%, transparent 100%);
+            margin: 0 auto;
+        }
+
+        /* Coluna 2 — contato */
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            color: #ffffff;
+            padding: 0 28px;
+        }
+
+        .footer-contact-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: clamp(0.86rem, 1.08vw, 1.16rem);
+            font-weight: 500;
+            line-height: 1.2;
+            color: rgba(255,255,255,0.88);
+        }
+
+        .footer-contact-line.email-line {
+            font-size: clamp(0.8rem, 0.98vw, 1.05rem);
+        }
+
+        .footer-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1.5px solid #25d366;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            flex: 0 0 34px;
+            color: #25d366;
+        }
+
+        .footer-icon.wa {
+            border-color: #25d366;
+            color: #25d366;
+        }
+
+        .footer-icon i {
+            font-size: 0.88rem;
+            line-height: 1;
+        }
+
+        /* Coluna 3 — meta */
+        .footer-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 0 0 0 28px;
+        }
+
+        .footer-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .footer-meta-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: #5dd672;
+            font-weight: 700;
+        }
+
+        .footer-meta-value {
+            font-size: clamp(0.82rem, 1vw, 1.05rem);
+            color: rgba(255,255,255,0.82);
+            font-weight: 500;
+        }
+
+        .footer-meta-value a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .footer-meta-value a:hover {
+            color: #5dd672;
+        }
+
+        /* Acento verde inferior */
+        .footer-accent {
+            height: 5px;
+            background: linear-gradient(90deg, #15803d 0%, #39a627 40%, #5dd672 60%, #39a627 80%, #15803d 100%);
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .content {
+                padding: 20px;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .product-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .product-gallery {
+                justify-content: flex-start;
+            }
+
+            .contact-footer-main {
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding: 24px 20px 20px;
+            }
+
+            .footer-brand {
+                justify-content: center;
+                padding: 0 0 20px;
+            }
+
+            .footer-divider {
+                width: 60%;
+                height: 1px;
+                min-height: 1px;
+                margin: 0 auto 20px;
+                background: linear-gradient(90deg, transparent, #39a627, transparent);
+            }
+
+            .footer-divider:last-of-type {
+                display: none;
+            }
+
+            .footer-contact {
+                padding: 0 0 20px;
+            }
+
+            .footer-meta {
+                padding: 0;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px 20px;
+            }
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 5mm;
+        }
+
+        @media print {
+            html,
+            body {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 0;
+                background: var(--white);
+                overflow: visible;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .container {
+                width: 100%;
+                max-width: none;
+                box-shadow: none;
+                border-radius: 0;
+                transform: none;
+            }
+
+            .content {
+                padding: 0;
+            }
+
+            .classification-page {
+                width: 100%;
+                padding: 0;
+            }
+
+            .classification-heading {
+                grid-template-columns: 105px 1fr;
+                gap: 8px;
+                margin-bottom: 4px;
+            }
+
+            .classification-heading img {
+                max-height: 46px;
+            }
+
+            .classification-heading h1 {
+                font-size: 1.3rem;
+            }
+
+            .profiles-placeholder {
+                height: 92px;
+                gap: 3px;
+                margin-bottom: 5px;
+            }
+
+            .profile-slot {
+                font-size: 0.43rem;
+            }
+
+            .classification-table-wrap {
+                overflow: visible;
+            }
+
+            .classification-table {
+                width: 100%;
+                min-width: 0;
+                font-size: 0.48rem;
+                line-height: 1;
+            }
+
+            .classification-table th,
+            .classification-table td {
+                height: 17px;
+                padding: 0 1px;
+                font-size: inherit;
+            }
+
+            .classification-table thead th {
+                font-size: 0.5rem;
+            }
+
+            .classification-table .model-heading,
+            .classification-table .application-heading {
+                font-size: 0.65rem;
+            }
+
+            .classification-table .subheading {
+                font-size: 0.43rem;
+            }
+
+            .classification-table .vertical-heading {
+                height: 72px;
+                font-size: 0.48rem;
+            }
+
+            .country {
+                font-size: 0.52rem;
+            }
+
+            .classification-note {
+                margin-top: 4px;
+                padding: 4px 6px;
+                font-size: 0.52rem;
+            }
+
+            .catalog-page {
+                width: 100%;
+                min-height: 0;
+                padding: 0;
+                break-before: page;
+                page-break-before: always;
+            }
+
+            .catalog-topbar {
+                grid-template-columns: 135px 48px 1fr;
+                gap: 10px;
+                margin-bottom: 8px;
+            }
+
+            .catalog-logo {
+                max-height: 48px;
+            }
+
+            .qr-placeholder {
+                width: 44px;
+                height: 44px;
+                font-size: 0.5rem;
+            }
+
+            .catalog-label {
+                font-size: 1.15rem;
+            }
+
+            .catalog-code {
+                font-size: 0.9rem;
+            }
+
+            .catalog-title {
+                margin-bottom: 10px;
+                padding: 5px 8px;
+                font-size: 0.95rem;
+            }
+
+            .catalog-model {
+                margin-bottom: 10px;
+                font-size: 0.62rem;
+            }
+
+            .specification-grid {
+                margin-bottom: 12px;
+            }
+
+            .specification-item {
+                min-height: 44px;
+                padding: 5px 6px;
+                font-size: 0.55rem;
+            }
+
+            .friction-table {
+                font-size: 0.5rem;
+            }
+
+            .friction-table th,
+            .friction-table td {
+                padding: 1px 3px;
+                font-size: inherit;
+            }
+
+            .catalog-visual-row {
+                grid-template-columns: 145px 1fr 160px;
+                gap: 12px;
+                min-height: 125px;
+                margin-bottom: 10px;
+            }
+
+            .technical-drawing-placeholder {
+                width: 135px;
+                height: 120px;
+                font-size: 0.55rem;
+            }
+
+            .technical-drawings {
+                gap: 8px;
+            }
+
+            .technical-drawings .technical-drawing-placeholder {
+                width: 112px;
+            }
+
+            .catalog-visual-row.two-drawings {
+                grid-template-columns: 232px 1fr 160px;
+            }
+
+            .application-table {
+                font-size: 0.52rem;
+            }
+
+            .application-table th,
+            .application-table td {
+                padding: 2px 4px;
+                font-size: inherit;
+            }
+
+            .dimension-table {
+                font-size: 0.46rem;
+            }
+
+            .dimension-table th,
+            .dimension-table td {
+                height: 18px;
+                padding: 2px;
+                font-size: inherit;
+            }
+
+            .dimension-table thead th {
+                font-size: 0.44rem;
+            }
+
+            .sustainability-banner {
+                margin-top: 12px;
+                padding: 6px;
+                font-size: 0.9rem;
+            }
+
+            .catalog-page-paired {
+                display: flex;
+                flex-direction: column;
+                gap: 2.5mm;
+            }
+
+            .shared-catalog-header {
+                grid-template-columns: 190px 64px 1fr;
+                gap: 16px;
+                padding-bottom: 8px;
+            }
+
+            .shared-catalog-header .catalog-logo {
+                max-height: 70px;
+            }
+
+            .shared-catalog-header .qr-placeholder {
+                width: 58px;
+                height: 58px;
+                font-size: 0.5rem;
+            }
+
+            .shared-catalog-heading .catalog-label {
+                font-size: 1.25rem;
+            }
+
+            .shared-catalog-heading strong {
+                font-size: 0.85rem;
+            }
+
+            .shared-catalog-title {
+                margin-bottom: 3px;
+                padding: 5px 8px;
+                font-size: 0.82rem;
+            }
+
+            .catalog-page-paired .catalog-entry + .catalog-entry {
+                padding-top: 1.5mm;
+            }
+
+            .catalog-entry-heading {
+                margin-bottom: 4px;
+                padding: 3px 6px;
+                border-left-width: 3px;
+            }
+
+            .catalog-entry-heading .catalog-model {
+                margin: 0;
+            }
+
+            .catalog-page-paired .catalog-topbar {
+                grid-template-columns: 110px 35px 1fr;
+                gap: 8px;
+                margin-bottom: 4px;
+            }
+
+            .catalog-page-paired .catalog-logo {
+                max-height: 35px;
+            }
+
+            .catalog-page-paired .qr-placeholder {
+                width: 32px;
+                height: 32px;
+                border-width: 1px;
+                font-size: 0.36rem;
+            }
+
+            .catalog-page-paired .catalog-label {
+                font-size: 0.8rem;
+            }
+
+            .catalog-page-paired .catalog-code {
+                font-size: 0.7rem;
+            }
+
+            .catalog-page-paired .catalog-title {
+                margin-bottom: 4px;
+                padding: 3px 6px;
+                font-size: 0.68rem;
+            }
+
+            .catalog-page-paired .catalog-model {
+                margin-bottom: 4px;
+                font-size: 0.5rem;
+                line-height: 1.1;
+            }
+
+            .catalog-page-paired .specification-grid {
+                margin-bottom: 6px;
+            }
+
+            .catalog-page-paired .specification-item {
+                min-height: 35px;
+                padding: 4px 5px;
+                font-size: 0.44rem;
+            }
+
+            .catalog-page-paired .specification-label {
+                margin-bottom: 1px;
+            }
+
+            .catalog-page-paired .friction-table {
+                font-size: 0.39rem;
+            }
+
+            .catalog-page-paired .catalog-visual-row {
+                grid-template-columns: 112px 1fr 135px;
+                gap: 8px;
+                min-height: 86px;
+                margin-bottom: 6px;
+            }
+
+            .catalog-page-paired .catalog-visual-row.two-drawings {
+                grid-template-columns: 214px 1fr 135px;
+            }
+
+            .catalog-page-paired .catalog-visual-row.three-drawings {
+                grid-template-columns: 270px 1fr 135px;
+            }
+
+            .catalog-page-paired .catalog-visual-row.four-drawings {
+                grid-template-columns: 324px 1fr 135px;
+            }
+
+            .catalog-page-paired .technical-drawing-placeholder {
+                width: 104px;
+                height: 82px;
+                font-size: 0.43rem;
+            }
+
+            .catalog-page-paired .technical-drawings .technical-drawing-placeholder {
+                width: 101px;
+            }
+
+            .catalog-page-paired .technical-drawings.four {
+                gap: 4px;
+            }
+
+            .catalog-page-paired .technical-drawings.three {
+                gap: 4px;
+            }
+
+            .catalog-page-paired .technical-drawings.three .technical-drawing-placeholder {
+                width: 87px;
+            }
+
+            .catalog-page-paired .technical-drawings.four .technical-drawing-placeholder {
+                width: 78px;
+            }
+
+            .catalog-page-paired .application-table {
+                font-size: 0.4rem;
+            }
+
+            .catalog-page-paired .application-table th,
+            .catalog-page-paired .application-table td {
+                padding: 1px 3px;
+            }
+
+            .catalog-page-paired .dimension-table {
+                font-size: 0.37rem;
+            }
+
+            .catalog-page-paired .dimension-table th,
+            .catalog-page-paired .dimension-table td {
+                height: 13px;
+                padding: 1px;
+            }
+
+            .catalog-page-paired .dimension-table thead th {
+                font-size: 0.35rem;
+            }
+
+            .catalog-page-paired .sustainability-banner {
+                margin-top: 7px;
+                padding: 5px;
+                font-size: 0.72rem;
+            }
+
+            .weight-page {
+                width: 100%;
+                min-height: 0;
+                padding: 0;
+            }
+
+            .weight-page .shared-catalog-header {
+                margin-bottom: 4px;
+            }
+
+            .weight-page-title {
+                font-size: 1.2rem;
+            }
+
+            .weight-page .shared-catalog-title {
+                margin-bottom: 4px;
+            }
+
+            .weight-table {
+                font-size: 0.5rem;
+            }
+
+            .weight-table th,
+            .weight-table td {
+                height: 18px;
+                padding: 1px 4px;
+                font-size: inherit;
+            }
+
+            .weight-table thead th {
+                font-size: 0.53rem;
+            }
+
+            .header {
+                padding: 24px 30px 22px;
+            }
+
+            .logo-img {
+                max-height: 86px;
+                margin-bottom: 12px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+                margin-bottom: 8px;
+            }
+
+            .header p {
+                font-size: 0.95rem;
+            }
+
+            .content {
+                padding: 22px 34px;
+            }
+
+            .info-grid {
+                gap: 18px;
+                margin-bottom: 24px;
+            }
+
+            .info-card {
+                padding: 16px 20px;
+            }
+
+            .info-card h3 {
+                font-size: 1.05rem;
+                margin-bottom: 8px;
+            }
+
+            .info-card p {
+                font-size: 0.82rem;
+                line-height: 1.35;
+            }
+
+            .product-header {
+                margin-top: 22px;
+                margin-bottom: 10px;
+            }
+
+            .section-title {
+                font-size: 1.25rem;
+            }
+
+            .table-container {
+                margin-bottom: 16px;
+                overflow: visible;
+            }
+
+            table {
+                min-width: 0;
+            }
+
+            th,
+            td {
+                padding: 7px 8px;
+                font-size: 0.72rem;
+                line-height: 1.2;
+            }
+
+            thead th {
+                font-size: 0.68rem;
+            }
+
+            .profile-icon-row td {
+                padding: 5px 6px;
+                height: 38px;
+            }
+
+            .profile-dot {
+                width: 30px;
+                height: 30px;
+            }
+
+            .profile-diagram-cell img {
+                max-height: 62px;
+            }
+
+            .profile-table-image {
+                max-height: 42px;
+            }
+
+            .profile-table-image.wide {
+                max-height: 48px;
+            }
+
+            .contact-footer-main {
+                padding: 16px 26px 14px;
+                gap: 0;
+            }
+
+            .footer-brand {
+                padding: 0 22px 0 0;
+            }
+
+            .footer-brand-card {
+                padding: 10px 14px;
+                border-radius: 12px;
+            }
+
+            .footer-brand img {
+                max-height: 72px;
+            }
+
+            .footer-divider {
+                min-height: 100px;
+            }
+
+            .footer-contact {
+                gap: 5px;
+                padding: 0 18px;
+            }
+
+            .footer-contact-line {
+                font-size: 0.64rem;
+                gap: 6px;
+            }
+
+            .footer-contact-line.email-line {
+                font-size: 0.6rem;
+            }
+
+            .footer-icon {
+                width: 26px;
+                height: 26px;
+                flex: 0 0 26px;
+            }
+
+            .footer-icon i {
+                font-size: 0.66rem;
+            }
+
+            .footer-meta {
+                padding: 0 0 0 18px;
+                gap: 8px;
+            }
+
+            .footer-meta-label {
+                font-size: 0.5rem;
+            }
+
+            .footer-meta-value {
+                font-size: 0.66rem;
+            }
+
+            .footer-accent {
+                height: 4px;
+            }
+
+            .content {
+                padding: 0;
+            }
+
+            .classification-page {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <img src="../imagens/logo-perfilflex.jpeg.jpeg?v=20260611" alt="PerfilFlex Soluções em Perfis" class="logo-img">
+
+            <h1>Linha <span>TPU</span></h1>
+            <p>Soluções em perfis de poliuretano termoplástico para aplicações industriais</p>
+        </header>
+
+        <div class="content">
+
+            <section class="classification-page" aria-labelledby="classification-title">
+                <div class="classification-heading">
+                    <img src="../imagens/logo-perfilflex.jpeg.jpeg?v=20260611" alt="PerfilFlex Soluções em Perfis">
+                    <h1 id="classification-title">Classificação dos Perfis</h1>
+                </div>
+
+                <div class="profiles-placeholder" aria-label="Espaço reservado para imagens dos perfis">
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                    <div class="profile-slot">Perfil</div>
+                </div>
+
+                <div class="classification-table-wrap">
+                    <table class="classification-table">
+                        <colgroup>
+                            <col style="width: 190px">
+                            <col style="width: 126px">
+                            <col style="width: 45px">
+                            <col style="width: 38px">
+                            <col style="width: 31px">
+                            <col style="width: 31px">
+                            <col style="width: 31px">
+                            <col style="width: 58px">
+                            <col style="width: 39px">
+                            <col style="width: 39px">
+                            <col style="width: 39px">
+                            <col style="width: 39px">
+                            <col style="width: 39px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th rowspan="3">Equipamento</th>
+                                <th rowspan="3">Tipo</th>
+                                <th colspan="6" class="model-heading">Modelo</th>
+                                <th colspan="5" class="application-heading">Aplicação</th>
+                            </tr>
+                            <tr>
+                                <th rowspan="2" class="subheading">Sigla</th>
+                                <th rowspan="2" class="subheading">Tipo</th>
+                                <th colspan="3" class="subheading">Dimensões</th>
+                                <th rowspan="2" class="subheading">Canal</th>
+                                <th rowspan="2" class="vertical-heading">Rolo Motriz</th>
+                                <th rowspan="2" class="vertical-heading">Rolo Movido</th>
+                                <th rowspan="2" class="vertical-heading">Rolo Guia</th>
+                                <th rowspan="2" class="vertical-heading">Polia Tensora</th>
+                                <th rowspan="2" class="vertical-heading">Monofio</th>
+                            </tr>
+                            <tr>
+                                <th class="subheading">A</th>
+                                <th class="subheading">B</th>
+                                <th class="subheading">C</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="equipment">PEDREIRA <span class="country">🇧🇷</span></td><td>monofio</td><td class="code">MON</td><td class="code">SA</td><td class="measure">38</td><td class="measure">12</td><td class="measure">16</td><td></td><td></td><td></td><td></td><td></td><td>X</td></tr>
+
+                            <tr><td rowspan="4" class="equipment">BRETON BIDESI <span class="country">🇮🇹</span></td><td></td><td class="code">BRE</td><td class="code">S</td><td class="measure">27</td><td class="measure">09</td><td class="measure">16</td><td class="channel">FLEX</td><td></td><td></td><td></td><td>X</td><td></td></tr>
+                            <tr><td></td><td class="code">BRE</td><td class="code">S</td><td class="measure">28</td><td class="measure">15</td><td class="measure">16</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">BRE</td><td class="code">T</td><td class="measure">27</td><td class="measure">18</td><td class="measure">16</td><td></td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">BRE</td><td class="code">T</td><td class="measure">28</td><td class="measure">11</td><td class="measure">7</td><td class="channel">cr FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+
+                            <tr><td rowspan="4" class="equipment">GASPARI MENOTTI <span class="country">🇮🇹</span></td><td></td><td class="code">GAS</td><td class="code">S</td><td class="measure">15</td><td class="measure">12</td><td class="measure">7</td><td></td><td></td><td></td><td></td><td>X</td><td></td></tr>
+                            <tr><td></td><td class="code">GAS</td><td class="code">SS</td><td class="measure">22</td><td class="measure">12</td><td class="measure">10</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">GAS</td><td class="code">SX</td><td class="measure">22</td><td class="measure">25</td><td class="measure">11</td><td></td><td>X</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">GAS</td><td class="code">TS</td><td class="measure">37</td><td class="measure">12</td><td class="measure">10</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+
+                            <tr><td rowspan="8" class="equipment">HEDEL <span class="country">🇧🇷</span></td><td></td><td class="code">HED</td><td class="code">S</td><td class="measure">20</td><td class="measure">12</td><td class="measure">10</td><td></td><td></td><td></td><td></td><td>X</td><td></td></tr>
+                            <tr><td></td><td class="code">HED</td><td class="code">S</td><td class="measure">24</td><td class="measure">15</td><td class="measure">16</td><td class="channel">FLEX</td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>72 Fios</td><td class="code">HED</td><td class="code">S</td><td class="measure">26</td><td class="measure">15</td><td class="measure">16</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td>74 Fios</td><td class="code">HED</td><td class="code">T</td><td class="measure">28</td><td class="measure">12</td><td class="measure">12</td><td class="channel">cr FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">HED</td><td class="code">T</td><td class="measure">28</td><td class="measure">15</td><td class="measure">16</td><td class="channel">cr FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">HED</td><td class="code">T</td><td class="measure">31</td><td class="measure">15</td><td class="measure">16</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td>72 Fios</td><td class="code">HED</td><td class="code">T</td><td class="measure">33</td><td class="measure">15</td><td class="measure">16</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td>74 Fios</td><td class="code">HED</td><td class="code">T</td><td class="measure">36</td><td class="measure">12</td><td class="measure">16</td><td class="channel">cr FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+
+                            <tr><td class="equipment">Cliente M.Brandão</td><td>Especial</td><td class="code">MIN</td><td class="code">T</td><td class="measure">29</td><td class="measure">16</td><td class="measure">12</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td rowspan="2" class="equipment">PEDRINI <span class="country">🇮🇹</span></td><td></td><td class="code">PED</td><td class="code">DC</td><td class="measure">20</td><td class="measure">12</td><td class="measure">10</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">PED</td><td class="code">SV</td><td class="measure">22</td><td class="measure">14</td><td class="measure">15</td><td></td><td></td><td></td><td></td><td>X</td><td></td></tr>
+
+                            <tr><td rowspan="14" class="equipment">RAMOS UNIVERSO <span class="country">🇧🇷</span></td><td></td><td class="code">RAM</td><td class="code">DC</td><td class="measure">39</td><td class="measure">15</td><td class="measure">18</td><td class="channel">FLEX</td><td>X</td><td>X</td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">DL</td><td class="measure">33</td><td class="measure">11</td><td class="measure">18</td><td></td><td>X</td><td>X</td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">S</td><td class="measure">17</td><td class="measure">11</td><td class="measure">7</td><td class="channel">FLEX</td><td></td><td></td><td></td><td>X</td><td></td></tr>
+                            <tr class="development-row"><td>Desenvolvimento</td><td class="code">RAM</td><td class="code">S</td><td class="measure">21</td><td class="measure">10</td><td class="measure">11</td><td class="channel">FLEX</td><td>X</td><td>X</td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">S</td><td class="measure">23</td><td class="measure">11</td><td class="measure">11</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">S</td><td class="measure">23</td><td class="measure">15</td><td class="measure">11</td><td class="channel">FLEX</td><td>X</td><td>X</td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">SY</td><td class="measure">23</td><td class="measure">10</td><td class="measure">11</td><td class="channel">FLEX</td><td>X</td><td>X</td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">T</td><td class="measure">29</td><td class="measure">16</td><td class="measure">12</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">T</td><td class="measure">33</td><td class="measure">11</td><td class="measure">18</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">T</td><td class="measure">33</td><td class="measure">11</td><td class="measure">23</td><td class="channel">cr FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">T</td><td class="measure">33</td><td class="measure">15</td><td class="measure">18</td><td class="channel">FLEX</td><td>X</td><td>X</td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">T</td><td class="measure">33</td><td class="measure">15</td><td class="measure">23</td><td class="channel">FLEX</td><td>X</td><td>X</td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">T</td><td class="measure">37</td><td class="measure">11</td><td class="measure">23</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">RAM</td><td class="code">TY</td><td class="measure">36</td><td class="measure">10</td><td class="measure">23</td><td class="channel">FLEX</td><td>X</td><td>X</td><td>X</td><td></td><td></td></tr>
+
+                            <tr><td rowspan="2" class="equipment">SKYSTONE</td><td></td><td class="code">SKS</td><td class="code">S</td><td class="measure">23</td><td class="measure">10</td><td class="measure">9</td><td class="channel">FLEX</td><td></td><td></td><td></td><td></td><td>X</td></tr>
+                            <tr><td></td><td class="code">SKS</td><td class="code">T</td><td class="measure">30</td><td class="measure">10</td><td class="measure">9</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+
+                            <tr><td rowspan="3" class="equipment">VENTOVAG <span class="country">🇧🇷</span></td><td></td><td class="code">VEN</td><td class="code">S</td><td class="measure">20</td><td class="measure">12</td><td class="measure">8</td><td></td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                            <tr><td></td><td class="code">VEN</td><td class="code">S</td><td class="measure">38</td><td class="measure">12</td><td class="measure">16</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td>X</td></tr>
+                            <tr><td></td><td class="code">VEN</td><td class="code">T</td><td class="measure">36</td><td class="measure">12</td><td class="measure">16</td><td class="channel">FLEX</td><td></td><td></td><td>X</td><td></td><td></td></tr>
+
+                            <tr><td class="equipment">Cliente SERRAMAR</td><td>Especial</td><td class="code">SER</td><td class="code">S</td><td class="measure">40</td><td class="measure">12</td><td class="measure">11</td><td></td><td></td><td></td><td>X</td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="classification-note">Itens grifados estão em desenvolvimento.</p>
+            </section>
+
+            <section class="catalog-page catalog-page-paired" aria-label="Catálogos MON, BRE e GAS">
+              <header class="shared-catalog-header">
+                <img src="../imagens/logo-perfilflex.jpeg.jpeg?v=20260611" alt="PerfilFlex Soluções em Perfis" class="catalog-logo">
+                <div class="qr-placeholder" aria-label="Espaço reservado para QR code">QR CODE</div>
+                <div class="shared-catalog-heading">
+                    <span class="catalog-label">Catálogo</span>
+                    <strong>Perfis de Desgaste TPU</strong>
+                </div>
+              </header>
+
+              <h2 class="catalog-title shared-catalog-title">Perfil de Desgaste para Revestimento das Polias dos Teares Mono e Multifios.</h2>
+
+              <article class="catalog-entry" aria-labelledby="catalog-mon-title">
+                <div class="catalog-entry-heading">
+                    <p class="catalog-model" id="catalog-mon-title">Modelo: <strong>PEDREIRA</strong></p>
+                    <span class="catalog-code">MON</span>
+                </div>
+
+                <div class="specification-grid">
+                    <div class="specification-item">
+                        <span class="specification-label">Material:</span>
+                        Poliuretano Termoplástico TPU
+                    </div>
+                    <div class="specification-item">
+                        <span class="specification-label">Dureza:</span>
+                        85 Shore A
+                    </div>
+                    <div class="specification-item">
+                        <span class="specification-label">Cor:</span>
+                        Preta
+                    </div>
+                    <div class="specification-item">
+                        <span class="specification-label">Temperatura de Trabalho:</span>
+                        de -30°C a +60°C
+                    </div>
+                    <div class="specification-item">
+                        <table class="friction-table" aria-label="Coeficientes de atrito">
+                            <thead>
+                                <tr><th colspan="2">Coeficiente de Atrito</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Aço</td><td>0,45</td></tr>
+                                <tr><td>Alumínio</td><td>0,45</td></tr>
+                                <tr><td>Borracha</td><td>0,55</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="catalog-visual-row">
+                    <div class="technical-drawing-placeholder">
+                        Espaço reservado<br>para desenho técnico
+                    </div>
+                    <div aria-hidden="true"></div>
+                    <table class="application-table" aria-label="Legenda de aplicação">
+                        <thead>
+                            <tr><th colspan="2">Aplicação</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Rolo Motriz ou Tracionado</td><td>A</td></tr>
+                            <tr><td>Rolo conduzido</td><td>B</td></tr>
+                            <tr><td>Rolo Guia</td><td>C</td></tr>
+                            <tr><td>Polia Tensionadora</td><td>D</td></tr>
+                            <tr><td>Pedreira</td><td>E</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="dimension-table" aria-label="Dimensões e propriedades do perfil MON">
+                    <colgroup>
+                        <col style="width: 15.5%">
+                        <col style="width: 15.5%">
+                        <col span="5" style="width: 2.1%">
+                        <col span="5" style="width: 5.2%">
+                        <col style="width: 4.8%">
+                        <col style="width: 4.8%">
+                        <col style="width: 6.5%">
+                        <col style="width: 6.5%">
+                        <col style="width: 8%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">EQUIPAMENTO</th>
+                            <th rowspan="2">DESENHO</th>
+                            <th colspan="5">APLICAÇÃO</th>
+                            <th colspan="5">DIMENSÕES MM</th>
+                            <th rowspan="2">PESO<br>Kg</th>
+                            <th rowspan="2">ROLO<br>Metros</th>
+                            <th rowspan="2">TENSÃO DE RUPTURA<br>N/mm</th>
+                            <th rowspan="2">ABRASÃO<br>DIN 53516<br>mm³</th>
+                            <th rowspan="2">RESISTÊNCIA AO RASGAMENTO<br>N/mm</th>
+                        </tr>
+                        <tr class="dimension-subhead">
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>R</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monofio</td>
+                            <td>MON SA-38-12-16</td>
+                            <td></td><td></td><td></td><td></td><td>X</td>
+                            <td>38,3</td><td>12,0</td><td>16,0</td><td>14,45</td><td>5,50</td>
+                            <td>0,596</td><td>30</td><td>43</td><td>25</td><td>60</td>
+                        </tr>
+                        <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+
+              </article>
+
+              <article class="catalog-entry" aria-labelledby="catalog-bre-title">
+                <div class="catalog-entry-heading">
+                    <p class="catalog-model" id="catalog-bre-title">Modelo: <strong>BRETON BIDESI</strong></p>
+                    <span class="catalog-code">BRE</span>
+                </div>
+
+                <div class="specification-grid">
+                    <div class="specification-item">
+                        <span class="specification-label">Material:</span>
+                        Poliuretano Termoplástico TPU
+                    </div>
+                    <div class="specification-item">
+                        <span class="specification-label">Dureza:</span>
+                        85 Shore A
+                    </div>
+                    <div class="specification-item">
+                        <span class="specification-label">Cor:</span>
+                        Preta
+                    </div>
+                    <div class="specification-item">
+                        <span class="specification-label">Temperatura de Trabalho:</span>
+                        de -30°C a +60°C
+                    </div>
+                    <div class="specification-item">
+                        <table class="friction-table" aria-label="Coeficientes de atrito BRE">
+                            <thead>
+                                <tr><th colspan="2">Coeficiente de Atrito</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Aço</td><td>0,45</td></tr>
+                                <tr><td>Alumínio</td><td>0,45</td></tr>
+                                <tr><td>Borracha</td><td>0,55</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="catalog-visual-row two-drawings">
+                    <div class="technical-drawings">
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil S</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil T</div>
+                    </div>
+                    <div aria-hidden="true"></div>
+                    <table class="application-table" aria-label="Legenda de aplicação BRE">
+                        <thead>
+                            <tr><th colspan="2">Aplicação</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Rolo Motriz ou Tracionado</td><td>A</td></tr>
+                            <tr><td>Rolo conduzido</td><td>B</td></tr>
+                            <tr><td>Rolo Guia</td><td>C</td></tr>
+                            <tr><td>Polia Tensionadora</td><td>D</td></tr>
+                            <tr><td>Pedreira</td><td>E</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="dimension-table" aria-label="Dimensões e propriedades dos perfis BRE">
+                    <colgroup>
+                        <col style="width: 15.5%">
+                        <col style="width: 15.5%">
+                        <col span="5" style="width: 2.1%">
+                        <col span="5" style="width: 5.2%">
+                        <col style="width: 4.8%">
+                        <col style="width: 4.8%">
+                        <col style="width: 6.5%">
+                        <col style="width: 6.5%">
+                        <col style="width: 8%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">EQUIPAMENTO</th>
+                            <th rowspan="2">DESENHO</th>
+                            <th colspan="5">APLICAÇÃO</th>
+                            <th colspan="5">DIMENSÕES MM</th>
+                            <th rowspan="2">PESO<br>Kg</th>
+                            <th rowspan="2">ROLO<br>Metros</th>
+                            <th rowspan="2">TENSÃO DE RUPTURA<br>N/mm</th>
+                            <th rowspan="2">ABRASÃO<br>DIN 53516<br>mm³</th>
+                            <th rowspan="2">RESISTÊNCIA AO RASGAMENTO<br>N/mm</th>
+                        </tr>
+                        <tr class="dimension-subhead">
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>R</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BRETON BIDESI</td><td>BRE S-27-09-16 FLEX</td>
+                            <td></td><td></td><td></td><td>X</td><td></td>
+                            <td>27</td><td>9,5</td><td>16</td><td></td><td>3,3</td>
+                            <td>0,544</td><td>50</td><td>43</td><td>25</td><td>60</td>
+                        </tr>
+                        <tr>
+                            <td>BRETON BIDESI</td><td>BRE S-28-15-16 FLEX</td>
+                            <td></td><td></td><td>X</td><td></td><td></td>
+                            <td>28</td><td>15</td><td>16</td><td></td><td>3,3</td>
+                            <td>0,737</td><td>30</td><td>43</td><td>25</td><td>60</td>
+                        </tr>
+                        <tr>
+                            <td>BRETON BIDESI</td><td>BRE T-27-18-16</td>
+                            <td></td><td></td><td>X</td><td></td><td></td>
+                            <td>27,5</td><td>18</td><td>16</td><td>9</td><td>3,25</td>
+                            <td>0,765</td><td>30</td><td>43</td><td>25</td><td>60</td>
+                        </tr>
+                        <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+
+              </article>
+
+              <article class="catalog-entry" aria-labelledby="catalog-gas-title">
+                <div class="catalog-entry-heading">
+                    <p class="catalog-model" id="catalog-gas-title">Modelo: <strong>GASPARI MENOTTI</strong></p>
+                    <span class="catalog-code">GAS</span>
+                </div>
+
+                <div class="specification-grid">
+                    <div class="specification-item">
+                        <span class="specification-label">Material:</span>
+                        Poliuretano Termoplástico TPU
+                    </div>
+                    <div class="specification-item">
+                        <span class="specification-label">Dureza:</span>
+                        85 Shore A
+                    </div>
+                    <div class="specification-item">
+                        <span class="specification-label">Cor:</span>
+                        Preta
+                    </div>
+                    <div class="specification-item">
+                        <span class="specification-label">Temperatura de Trabalho:</span>
+                        de -30°C a +60°C
+                    </div>
+                    <div class="specification-item">
+                        <table class="friction-table" aria-label="Coeficientes de atrito GAS">
+                            <thead>
+                                <tr><th colspan="2">Coeficiente de Atrito</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Aço</td><td>0,45</td></tr>
+                                <tr><td>Alumínio</td><td>0,45</td></tr>
+                                <tr><td>Borracha</td><td>0,55</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="catalog-visual-row four-drawings">
+                    <div class="technical-drawings four">
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil S</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil SS</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil SX</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil TS</div>
+                    </div>
+                    <div aria-hidden="true"></div>
+                    <table class="application-table" aria-label="Legenda de aplicação GAS">
+                        <thead>
+                            <tr><th colspan="2">Aplicação</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Rolo Motriz ou Tracionado</td><td>A</td></tr>
+                            <tr><td>Rolo conduzido</td><td>B</td></tr>
+                            <tr><td>Rolo Guia</td><td>C</td></tr>
+                            <tr><td>Polia Tensionadora</td><td>D</td></tr>
+                            <tr><td>Pedreira</td><td>E</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="dimension-table" aria-label="Dimensões e propriedades dos perfis GAS">
+                    <colgroup>
+                        <col style="width: 15.5%">
+                        <col style="width: 15.5%">
+                        <col span="5" style="width: 2.1%">
+                        <col span="5" style="width: 5.2%">
+                        <col style="width: 4.8%">
+                        <col style="width: 4.8%">
+                        <col style="width: 6.5%">
+                        <col style="width: 6.5%">
+                        <col style="width: 8%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">EQUIPAMENTO</th>
+                            <th rowspan="2">DESENHO</th>
+                            <th colspan="5">APLICAÇÃO</th>
+                            <th colspan="5">DIMENSÕES MM</th>
+                            <th rowspan="2">PESO<br>Kg</th>
+                            <th rowspan="2">ROLO<br>Metros</th>
+                            <th rowspan="2">TENSÃO DE RUPTURA<br>N/mm</th>
+                            <th rowspan="2">ABRASÃO<br>DIN 53516<br>mm³</th>
+                            <th rowspan="2">RESISTÊNCIA AO RASGAMENTO<br>N/mm</th>
+                        </tr>
+                        <tr class="dimension-subhead">
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>R</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GASPARI MENOTTI</td><td>GAS S-15-12-7</td>
+                            <td></td><td></td><td></td><td>X</td><td></td>
+                            <td>15</td><td>12</td><td>7</td><td></td><td>3,5</td>
+                            <td></td><td></td><td>43</td><td>25</td><td>60</td>
+                        </tr>
+                        <tr>
+                            <td>GASPARI MENOTTI</td><td>GAS SS-22-12-10 FLEX</td>
+                            <td></td><td></td><td>X</td><td></td><td></td>
+                            <td>21,9</td><td>12,2</td><td>10,2</td><td></td><td>3,5</td>
+                            <td>0,419</td><td>50</td><td>43</td><td>25</td><td>60</td>
+                        </tr>
+                        <tr>
+                            <td>GASPARI MENOTTI</td><td>GAS SX-22-25-17</td>
+                            <td>X</td><td></td><td></td><td></td><td></td>
+                            <td>22,5</td><td>25</td><td>17,5</td><td></td><td>4,5</td>
+                            <td>0,460</td><td>50</td><td>43</td><td>25</td><td>60</td>
+                        </tr>
+                        <tr>
+                            <td>GASPARI MENOTTI</td><td>GAS TS-37-12-10 FLEX</td>
+                            <td></td><td></td><td>X</td><td></td><td></td>
+                            <td>36,8</td><td>12,2</td><td>10,11</td><td>9,6</td><td>3,5</td>
+                            <td>0,573</td><td>50</td><td>43</td><td>25</td><td>60</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+              </article>
+
+              <div class="sustainability-banner">Compromisso com a sustentabilidade</div>
+            </section>
+
+            <section class="catalog-page catalog-page-paired" aria-label="Catálogos HED, PED e RAM">
+              <header class="shared-catalog-header">
+                <img src="../imagens/logo-perfilflex.jpeg.jpeg?v=20260611" alt="PerfilFlex Soluções em Perfis" class="catalog-logo">
+                <div class="qr-placeholder" aria-label="Espaço reservado para QR code">QR CODE</div>
+                <div class="shared-catalog-heading">
+                    <span class="catalog-label">Catálogo</span>
+                    <strong>Perfis de Desgaste TPU</strong>
+                </div>
+              </header>
+
+              <h2 class="catalog-title shared-catalog-title">Perfil de Desgaste para Revestimento das Polias dos Teares Mono e Multifios.</h2>
+
+              <article class="catalog-entry" aria-labelledby="catalog-hed-title">
+                <div class="catalog-entry-heading">
+                    <p class="catalog-model" id="catalog-hed-title">Modelo: <strong>HEDEL</strong></p>
+                    <span class="catalog-code">HED</span>
+                </div>
+
+                <div class="specification-grid">
+                    <div class="specification-item"><span class="specification-label">Material:</span>Poliuretano Termoplástico TPU</div>
+                    <div class="specification-item"><span class="specification-label">Dureza:</span>85 Shore A</div>
+                    <div class="specification-item"><span class="specification-label">Cor:</span>Preta</div>
+                    <div class="specification-item"><span class="specification-label">Temperatura de Trabalho:</span>de -30°C a +60°C</div>
+                    <div class="specification-item">
+                        <table class="friction-table" aria-label="Coeficientes de atrito HED">
+                            <thead><tr><th colspan="2">Coeficiente de Atrito</th></tr></thead>
+                            <tbody>
+                                <tr><td>Aço</td><td>0,45</td></tr>
+                                <tr><td>Alumínio</td><td>0,45</td></tr>
+                                <tr><td>Borracha</td><td>0,55</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="catalog-visual-row three-drawings">
+                    <div class="technical-drawings three">
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil S</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil S FLEX</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil T FLEX</div>
+                    </div>
+                    <div aria-hidden="true"></div>
+                    <table class="application-table" aria-label="Legenda de aplicação HED">
+                        <thead><tr><th colspan="2">Aplicação</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rolo Motriz ou Tracionado</td><td>A</td></tr>
+                            <tr><td>Rolo conduzido</td><td>B</td></tr>
+                            <tr><td>Rolo Guia</td><td>C</td></tr>
+                            <tr><td>Polia Tensionadora</td><td>D</td></tr>
+                            <tr><td>Pedreira</td><td>E</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="dimension-table" aria-label="Dimensões e propriedades dos perfis HED">
+                    <colgroup>
+                        <col style="width: 15.5%"><col style="width: 15.5%">
+                        <col span="5" style="width: 2.1%"><col span="5" style="width: 5.2%">
+                        <col style="width: 4.8%"><col style="width: 4.8%">
+                        <col style="width: 6.5%"><col style="width: 6.5%"><col style="width: 8%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">EQUIPAMENTO</th><th rowspan="2">DESENHO</th>
+                            <th colspan="5">APLICAÇÃO</th><th colspan="5">DIMENSÕES MM</th>
+                            <th rowspan="2">PESO<br>Kg</th><th rowspan="2">ROLO<br>Metros</th>
+                            <th rowspan="2">TENSÃO DE RUPTURA<br>N/mm</th>
+                            <th rowspan="2">ABRASÃO<br>DIN 53516<br>mm³</th>
+                            <th rowspan="2">RESISTÊNCIA AO RASGAMENTO<br>N/mm</th>
+                        </tr>
+                        <tr class="dimension-subhead">
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>R</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>HEDEL</td><td>HED S-20-12-10</td><td></td><td></td><td></td><td>X</td><td></td><td>20,0</td><td>12,0</td><td>10,0</td><td></td><td>3,75</td><td>0,391</td><td>50</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>HEDEL</td><td>HED S-24-15-16 FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>23,8</td><td>15,0</td><td>15,7</td><td></td><td>3,65</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>HEDEL</td><td>HED S-26-15-16 FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>26,0</td><td>15,0</td><td>15,7</td><td></td><td>3,65</td><td>0,682</td><td>30</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>HEDEL</td><td>HED T-28-12-12 cr FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>27,8</td><td>12,0</td><td>12,0</td><td>8,8</td><td>3,50</td><td>0,715</td><td>30</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>HEDEL</td><td>HED T-28-15-16 cr FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>28,5</td><td>15,0</td><td>16,0</td><td>9,6</td><td>3,60</td><td></td><td>30</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>HEDEL</td><td>HED T-31-15-16 FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>31,5</td><td>15,0</td><td>15,7</td><td>9,7</td><td>3,65</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>HEDEL</td><td>HED T-33-15-16 FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>33,0</td><td>15,0</td><td>15,7</td><td>9,7</td><td>3,65</td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td>HEDEL</td><td>HED T-36-12-16 FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>36,0</td><td>12,0</td><td>15,7</td><td>9,7</td><td>3,65</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </tbody>
+                </table>
+              </article>
+
+              <article class="catalog-entry" aria-labelledby="catalog-ped-title">
+                <div class="catalog-entry-heading">
+                    <p class="catalog-model" id="catalog-ped-title">Modelo: <strong>PEDRINI</strong></p>
+                    <span class="catalog-code">PED</span>
+                </div>
+
+                <div class="specification-grid">
+                    <div class="specification-item"><span class="specification-label">Material:</span>Poliuretano Termoplástico TPU</div>
+                    <div class="specification-item"><span class="specification-label">Dureza:</span>85 Shore A</div>
+                    <div class="specification-item"><span class="specification-label">Cor:</span>Preta</div>
+                    <div class="specification-item"><span class="specification-label">Temperatura de Trabalho:</span>de -30°C a +60°C</div>
+                    <div class="specification-item">
+                        <table class="friction-table" aria-label="Coeficientes de atrito PED">
+                            <thead><tr><th colspan="2">Coeficiente de Atrito</th></tr></thead>
+                            <tbody>
+                                <tr><td>Aço</td><td>0,45</td></tr>
+                                <tr><td>Alumínio</td><td>0,45</td></tr>
+                                <tr><td>Borracha</td><td>0,55</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="catalog-visual-row three-drawings">
+                    <div class="technical-drawings three">
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil DC FLEX</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil SV</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil S FLEX</div>
+                    </div>
+                    <div aria-hidden="true"></div>
+                    <table class="application-table" aria-label="Legenda de aplicação PED">
+                        <thead><tr><th colspan="2">Aplicação</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rolo Motriz ou Tracionado</td><td>A</td></tr>
+                            <tr><td>Rolo conduzido</td><td>B</td></tr>
+                            <tr><td>Rolo Guia</td><td>C</td></tr>
+                            <tr><td>Polia Tensionadora</td><td>D</td></tr>
+                            <tr><td>Pedreira</td><td>E</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="dimension-table" aria-label="Dimensões e propriedades dos perfis PED">
+                    <colgroup>
+                        <col style="width: 15.5%"><col style="width: 15.5%">
+                        <col span="5" style="width: 2.1%"><col span="5" style="width: 5.2%">
+                        <col style="width: 4.8%"><col style="width: 4.8%">
+                        <col style="width: 6.5%"><col style="width: 6.5%"><col style="width: 8%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">EQUIPAMENTO</th><th rowspan="2">DESENHO</th>
+                            <th colspan="5">APLICAÇÃO</th><th colspan="5">DIMENSÕES MM</th>
+                            <th rowspan="2">PESO<br>Kg</th><th rowspan="2">ROLO<br>Metros</th>
+                            <th rowspan="2">TENSÃO DE RUPTURA<br>N/mm</th>
+                            <th rowspan="2">ABRASÃO<br>DIN 53516<br>mm³</th>
+                            <th rowspan="2">RESISTÊNCIA AO RASGAMENTO<br>N/mm</th>
+                        </tr>
+                        <tr class="dimension-subhead">
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>R</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>PEDRINI</td><td>PED DC-20-12-10 FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>19,7</td><td>12</td><td>10</td><td>9,5</td><td>3,5</td><td>0,330</td><td>50</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>PEDRINI</td><td>PED SV-22-14-15</td><td></td><td></td><td></td><td>X</td><td></td><td>21,6</td><td>11,25</td><td></td><td>15,1</td><td>3,25</td><td>0,270</td><td>50</td><td>43</td><td>25</td><td>60</td></tr>
+                    </tbody>
+                </table>
+              </article>
+
+              <article class="catalog-entry" aria-labelledby="catalog-ram-title">
+                <div class="catalog-entry-heading">
+                    <p class="catalog-model" id="catalog-ram-title">Modelo: <strong>RAMOS UNIVERSO</strong></p>
+                    <span class="catalog-code">RAM</span>
+                </div>
+
+                <div class="specification-grid">
+                    <div class="specification-item"><span class="specification-label">Material:</span>Poliuretano Termoplástico TPU</div>
+                    <div class="specification-item"><span class="specification-label">Dureza:</span>85 Shore A</div>
+                    <div class="specification-item"><span class="specification-label">Cor:</span>Preta</div>
+                    <div class="specification-item"><span class="specification-label">Temperatura de Trabalho:</span>de -30°C a +60°C</div>
+                    <div class="specification-item">
+                        <table class="friction-table" aria-label="Coeficientes de atrito RAM">
+                            <thead><tr><th colspan="2">Coeficiente de Atrito</th></tr></thead>
+                            <tbody>
+                                <tr><td>Aço</td><td>0,45</td></tr>
+                                <tr><td>Alumínio</td><td>0,45</td></tr>
+                                <tr><td>Borracha</td><td>0,55</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="catalog-visual-row four-drawings">
+                    <div class="technical-drawings four">
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil DC FLEX</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil DL</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil S FLEX</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil SY FLEX</div>
+                    </div>
+                    <div aria-hidden="true"></div>
+                    <table class="application-table" aria-label="Legenda de aplicação RAM">
+                        <thead><tr><th colspan="2">Aplicação</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rolo Motriz ou Tracionado</td><td>A</td></tr>
+                            <tr><td>Rolo conduzido</td><td>B</td></tr>
+                            <tr><td>Rolo Guia</td><td>C</td></tr>
+                            <tr><td>Polia Tensionadora</td><td>D</td></tr>
+                            <tr><td>Pedreira</td><td>E</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="dimension-table" aria-label="Dimensões e propriedades dos perfis RAM">
+                    <colgroup>
+                        <col style="width: 15.5%"><col style="width: 15.5%">
+                        <col span="5" style="width: 2.1%"><col span="5" style="width: 5.2%">
+                        <col style="width: 4.8%"><col style="width: 4.8%">
+                        <col style="width: 6.5%"><col style="width: 6.5%"><col style="width: 8%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">EQUIPAMENTO</th><th rowspan="2">DESENHO</th>
+                            <th colspan="5">APLICAÇÃO</th><th colspan="5">DIMENSÕES MM</th>
+                            <th rowspan="2">PESO<br>Kg</th><th rowspan="2">ROLO<br>Metros</th>
+                            <th rowspan="2">TENSÃO DE RUPTURA<br>N/mm</th>
+                            <th rowspan="2">ABRASÃO<br>DIN 53516<br>mm³</th>
+                            <th rowspan="2">RESISTÊNCIA AO RASGAMENTO<br>N/mm</th>
+                        </tr>
+                        <tr class="dimension-subhead">
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>R</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>RAMOS UNIVERSO</td><td>RAM DC-39-15-18 FLEX</td><td>X</td><td>X</td><td>X</td><td></td><td></td><td>38,8</td><td>15</td><td>18,5</td><td>9,4</td><td>3,25</td><td>0,935</td><td>30</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>RAMOS UNIVERSO</td><td>RAM DL-33-11-18</td><td>X</td><td>X</td><td>X</td><td></td><td></td><td>33,5</td><td>10,7</td><td>18,1</td><td>9,4</td><td>3,25</td><td>0,683</td><td>30</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>RAMOS UNIVERSO</td><td>RAM S-17-11-7 FLEX</td><td></td><td></td><td></td><td>X</td><td></td><td>17</td><td>11</td><td>7</td><td></td><td>3,25</td><td>0,280</td><td>50</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>RAMOS UNIVERSO</td><td>RAM S-23-11-11 FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>23,3</td><td>11</td><td>11,5</td><td></td><td>3,25</td><td>0,473</td><td>50</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>RAMOS UNIVERSO</td><td>RAM S-23-15-11 FLEX</td><td>X</td><td>X</td><td>X</td><td></td><td></td><td>23,3</td><td>15</td><td>11,5</td><td></td><td>3,25</td><td>0,610</td><td>50</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>RAMOS UNIVERSO</td><td>RAM SY-23-10-11 FLEX</td><td>X</td><td>X</td><td>X</td><td></td><td></td><td>23</td><td>10</td><td>11,5</td><td></td><td>3,25</td><td>0,387</td><td>50</td><td>43</td><td>25</td><td>60</td></tr>
+                    </tbody>
+                </table>
+              </article>
+
+              <div class="sustainability-banner">Compromisso com a sustentabilidade</div>
+            </section>
+
+            <section class="catalog-page catalog-page-paired" aria-label="Catálogos RAM, SER e VEN">
+              <header class="shared-catalog-header">
+                <img src="../imagens/logo-perfilflex.jpeg.jpeg?v=20260611" alt="PerfilFlex Soluções em Perfis" class="catalog-logo">
+                <div class="qr-placeholder" aria-label="Espaço reservado para QR code">QR CODE</div>
+                <div class="shared-catalog-heading">
+                    <span class="catalog-label">Catálogo</span>
+                    <strong>Perfis de Desgaste TPU</strong>
+                </div>
+              </header>
+
+              <h2 class="catalog-title shared-catalog-title">Perfil de Desgaste para Revestimento das Polias dos Teares Mono e Multifios.</h2>
+
+              <article class="catalog-entry" aria-labelledby="catalog-ram-cont-title">
+                <div class="catalog-entry-heading">
+                    <p class="catalog-model" id="catalog-ram-cont-title">Modelo: <strong>RAMOS UNIVERSO</strong></p>
+                    <span class="catalog-code">RAM</span>
+                </div>
+
+                <div class="specification-grid">
+                    <div class="specification-item"><span class="specification-label">Material:</span>Poliuretano Termoplástico TPU</div>
+                    <div class="specification-item"><span class="specification-label">Dureza:</span>85 Shore A</div>
+                    <div class="specification-item"><span class="specification-label">Cor:</span>Preta</div>
+                    <div class="specification-item"><span class="specification-label">Temperatura de Trabalho:</span>de -30°C a +60°C</div>
+                    <div class="specification-item">
+                        <table class="friction-table" aria-label="Coeficientes de atrito RAM">
+                            <thead><tr><th colspan="2">Coeficiente de Atrito</th></tr></thead>
+                            <tbody>
+                                <tr><td>Aço</td><td>0,45</td></tr>
+                                <tr><td>Alumínio</td><td>0,45</td></tr>
+                                <tr><td>Borracha</td><td>0,55</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="catalog-visual-row two-drawings">
+                    <div class="technical-drawings">
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil T FLEX</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil TY FLEX</div>
+                    </div>
+                    <div aria-hidden="true"></div>
+                    <table class="application-table" aria-label="Legenda de aplicação RAM">
+                        <thead><tr><th colspan="2">Aplicação</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rolo Motriz ou Tracionado</td><td>A</td></tr>
+                            <tr><td>Rolo conduzido</td><td>B</td></tr>
+                            <tr><td>Rolo Guia</td><td>C</td></tr>
+                            <tr><td>Polia Tensionadora</td><td>D</td></tr>
+                            <tr><td>Pedreira</td><td>E</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="dimension-table" aria-label="Dimensões e propriedades complementares dos perfis RAM">
+                    <colgroup>
+                        <col style="width: 15.5%"><col style="width: 15.5%">
+                        <col span="5" style="width: 2.1%"><col span="5" style="width: 5.2%">
+                        <col style="width: 4.8%"><col style="width: 4.8%">
+                        <col style="width: 6.5%"><col style="width: 6.5%"><col style="width: 8%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">EQUIPAMENTO</th><th rowspan="2">DESENHO</th>
+                            <th colspan="5">APLICAÇÃO</th><th colspan="5">DIMENSÕES MM</th>
+                            <th rowspan="2">PESO<br>Kg</th><th rowspan="2">ROLO<br>Metros</th>
+                            <th rowspan="2">TENSÃO DE RUPTURA<br>N/mm</th>
+                            <th rowspan="2">ABRASÃO<br>DIN 53516<br>mm³</th>
+                            <th rowspan="2">RESISTÊNCIA AO RASGAMENTO<br>N/mm</th>
+                        </tr>
+                        <tr class="dimension-subhead">
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>R</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>RAMOS UNIVERSO</td><td>RAM T-33-11-18 FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>33,5</td><td>11</td><td>18,1</td><td>9,4</td><td>3,25</td><td>0,726</td><td>30</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>RAMOS UNIVERSO</td><td>RAM T-33-11-23 FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>33,5</td><td>11</td><td>22,84</td><td>9,3</td><td>3,25</td><td></td><td></td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>RAMOS UNIVERSO</td><td>RAM T-33-15-18 FLEX</td><td>X</td><td>X</td><td>X</td><td></td><td></td><td>33,5</td><td>15,1</td><td>18,3</td><td>9,3</td><td>3,25</td><td>0,836</td><td>30</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>RAMOS UNIVERSO</td><td>RAM T-37-11-23 FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>37,5</td><td>11</td><td>22,84</td><td>9,3</td><td>3,25</td><td>0,792</td><td>30</td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>RAMOS UNIVERSO</td><td>RAM TY-32-10-23 FLEX</td><td></td><td></td><td>X</td><td></td><td></td><td>32,5</td><td>10,0</td><td>23,0</td><td>9,6</td><td>3,25</td><td>0,658</td><td>30</td><td>43</td><td>25</td><td>60</td></tr>
+                    </tbody>
+                </table>
+              </article>
+
+              <article class="catalog-entry" aria-labelledby="catalog-ser-title">
+                <div class="catalog-entry-heading">
+                    <p class="catalog-model" id="catalog-ser-title">Modelo: <strong>SERRAMAR</strong></p>
+                    <span class="catalog-code">SER</span>
+                </div>
+
+                <div class="specification-grid">
+                    <div class="specification-item"><span class="specification-label">Material:</span>Poliuretano Termoplástico TPU</div>
+                    <div class="specification-item"><span class="specification-label">Dureza:</span>85 Shore A</div>
+                    <div class="specification-item"><span class="specification-label">Cor:</span>Preta</div>
+                    <div class="specification-item"><span class="specification-label">Temperatura de Trabalho:</span>de -30°C a +60°C</div>
+                    <div class="specification-item">
+                        <table class="friction-table" aria-label="Coeficientes de atrito SER">
+                            <thead><tr><th colspan="2">Coeficiente de Atrito</th></tr></thead>
+                            <tbody>
+                                <tr><td>Aço</td><td>0,45</td></tr>
+                                <tr><td>Alumínio</td><td>0,45</td></tr>
+                                <tr><td>Borracha</td><td>0,55</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="catalog-visual-row">
+                    <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil S</div>
+                    <div aria-hidden="true"></div>
+                    <table class="application-table" aria-label="Legenda de aplicação SER">
+                        <thead><tr><th colspan="2">Aplicação</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rolo Motriz ou Tracionado</td><td>A</td></tr>
+                            <tr><td>Rolo conduzido</td><td>B</td></tr>
+                            <tr><td>Rolo Guia</td><td>C</td></tr>
+                            <tr><td>Polia Tensionadora</td><td>D</td></tr>
+                            <tr><td>Pedreira</td><td>E</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="dimension-table" aria-label="Dimensões e propriedades do perfil SER">
+                    <colgroup>
+                        <col style="width: 15.5%"><col style="width: 15.5%">
+                        <col span="5" style="width: 2.1%"><col span="5" style="width: 5.2%">
+                        <col style="width: 4.8%"><col style="width: 4.8%">
+                        <col style="width: 6.5%"><col style="width: 6.5%"><col style="width: 8%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">EQUIPAMENTO</th><th rowspan="2">DESENHO</th>
+                            <th colspan="5">APLICAÇÃO</th><th colspan="5">DIMENSÕES MM</th>
+                            <th rowspan="2">PESO<br>Kg</th><th rowspan="2">ROLO<br>Metros</th>
+                            <th rowspan="2">TENSÃO DE RUPTURA<br>N/mm</th>
+                            <th rowspan="2">ABRASÃO<br>DIN 53516<br>mm³</th>
+                            <th rowspan="2">RESISTÊNCIA AO RASGAMENTO<br>N/mm</th>
+                        </tr>
+                        <tr class="dimension-subhead">
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>R</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Serramar</td><td>SER S-40-12-11</td><td></td><td></td><td></td><td></td><td>X</td><td>40</td><td>12</td><td>17</td><td></td><td>3,7</td><td>0,860</td><td>30</td><td>43</td><td>25</td><td>60</td></tr>
+                    </tbody>
+                </table>
+              </article>
+
+              <article class="catalog-entry" aria-labelledby="catalog-ven-title">
+                <div class="catalog-entry-heading">
+                    <p class="catalog-model" id="catalog-ven-title">Modelo: <strong>VENTOWAG</strong></p>
+                    <span class="catalog-code">VEN</span>
+                </div>
+
+                <div class="specification-grid">
+                    <div class="specification-item"><span class="specification-label">Material:</span>Poliuretano Termoplástico TPU</div>
+                    <div class="specification-item"><span class="specification-label">Dureza:</span>85 Shore A</div>
+                    <div class="specification-item"><span class="specification-label">Cor:</span>Preta</div>
+                    <div class="specification-item"><span class="specification-label">Temperatura de Trabalho:</span>de -30°C a +60°C</div>
+                    <div class="specification-item">
+                        <table class="friction-table" aria-label="Coeficientes de atrito VEN">
+                            <thead><tr><th colspan="2">Coeficiente de Atrito</th></tr></thead>
+                            <tbody>
+                                <tr><td>Aço</td><td>0,45</td></tr>
+                                <tr><td>Alumínio</td><td>0,45</td></tr>
+                                <tr><td>Borracha</td><td>0,55</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="catalog-visual-row three-drawings">
+                    <div class="technical-drawings three">
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil S</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil S FLEX</div>
+                        <div class="technical-drawing-placeholder">Desenho técnico<br>Perfil T</div>
+                    </div>
+                    <div aria-hidden="true"></div>
+                    <table class="application-table" aria-label="Legenda de aplicação VEN">
+                        <thead><tr><th colspan="2">Aplicação</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rolo Motriz ou Tracionado</td><td>A</td></tr>
+                            <tr><td>Rolo conduzido</td><td>B</td></tr>
+                            <tr><td>Rolo Guia</td><td>C</td></tr>
+                            <tr><td>Polia Tensionadora</td><td>D</td></tr>
+                            <tr><td>Pedreira</td><td>E</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="dimension-table" aria-label="Dimensões e propriedades dos perfis VEN">
+                    <colgroup>
+                        <col style="width: 15.5%"><col style="width: 15.5%">
+                        <col span="5" style="width: 2.1%"><col span="5" style="width: 5.2%">
+                        <col style="width: 4.8%"><col style="width: 4.8%">
+                        <col style="width: 6.5%"><col style="width: 6.5%"><col style="width: 8%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">EQUIPAMENTO</th><th rowspan="2">DESENHO</th>
+                            <th colspan="5">APLICAÇÃO</th><th colspan="5">DIMENSÕES MM</th>
+                            <th rowspan="2">PESO<br>Kg</th><th rowspan="2">ROLO<br>Metros</th>
+                            <th rowspan="2">TENSÃO DE RUPTURA<br>N/mm</th>
+                            <th rowspan="2">ABRASÃO<br>DIN 53516<br>mm³</th>
+                            <th rowspan="2">RESISTÊNCIA AO RASGAMENTO<br>N/mm</th>
+                        </tr>
+                        <tr class="dimension-subhead">
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+                            <th>A</th><th>B</th><th>C</th><th>D</th><th>R</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>VENTOWAG</td><td>VEN S-20-12-8</td><td></td><td></td><td>X</td><td></td><td></td><td>20,5</td><td>12</td><td>8,5</td><td></td><td>3,7</td><td>0,396</td><td></td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>VENTOWAG</td><td>VEN S-38-12-16 FLEX</td><td></td><td></td><td>X</td><td></td><td>X</td><td>38,3</td><td>12</td><td>16</td><td></td><td>3,7</td><td>0,765</td><td></td><td>43</td><td>25</td><td>60</td></tr>
+                        <tr><td>VENTOWAG</td><td>VEN T-36-12-16</td><td></td><td></td><td>X</td><td></td><td></td><td>36</td><td>12</td><td>16,5</td><td>9,5</td><td>3,7</td><td>0,712</td><td></td><td>43</td><td>25</td><td>60</td></tr>
+                    </tbody>
+                </table>
+              </article>
+
+              <div class="sustainability-banner">Compromisso com a sustentabilidade</div>
+            </section>
+
+            <section class="weight-page" aria-labelledby="weight-page-title">
+                <header class="shared-catalog-header">
+                    <img src="../imagens/logo-perfilflex.jpeg.jpeg?v=20260611" alt="PerfilFlex Soluções em Perfis" class="catalog-logo">
+                    <div class="qr-placeholder" aria-label="Espaço reservado para QR code">QR CODE</div>
+                    <h2 class="weight-page-title" id="weight-page-title">Peso dos Perfis</h2>
+                </header>
+
+                <p class="catalog-title shared-catalog-title">Perfil de Desgaste para Revestimento das Polias dos Teares Mono e Multifios.</p>
+
+                <table class="weight-table" aria-label="Tabela de peso dos perfis">
+                    <colgroup>
+                        <col style="width: 17.5%">
+                        <col style="width: 29%">
+                        <col style="width: 13.5%">
+                        <col style="width: 17%">
+                        <col style="width: 7.7%">
+                        <col style="width: 7.7%">
+                        <col style="width: 7.6%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th colspan="4" class="weight-group-heading">DESCRIÇÃO</th>
+                            <th colspan="3" class="weight-group-heading">Kg/m</th>
+                        </tr>
+                        <tr>
+                            <th>Fabricante</th>
+                            <th>Código Fabricante</th>
+                            <th>Equipamento</th>
+                            <th>Modelo</th>
+                            <th>Bruto</th>
+                            <th>Cálculo</th>
+                            <th>Acabado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td rowspan="11" class="weight-manufacturer">Perfil Flex</td><td></td><td>Cerâmica</td><td>ARE SU-29-26-22</td><td class="weight-number">0,688</td><td class="weight-number">0,631</td><td class="weight-number">0,573</td></tr>
+                        <tr><td></td><td>Cerâmica</td><td>ARE SA-38-12-16</td><td class="weight-number">0,579</td><td class="weight-number">0,521</td><td class="weight-number">0,463</td></tr>
+                        <tr><td></td><td>Cerâmica</td><td>ARE RSR 2</td><td class="weight-number">0,005</td><td class="weight-number">0,006</td><td class="weight-number">0,004</td></tr>
+                        <tr><td></td><td>Cerâmica</td><td>ARE RSR 3</td><td class="weight-number">0,011</td><td class="weight-number">0,015</td><td class="weight-number">0,009</td></tr>
+                        <tr><td></td><td>Cerâmica</td><td>ARE RSR 4</td><td class="weight-number">0,020</td><td class="weight-number">0,026</td><td class="weight-number">0,016</td></tr>
+                        <tr><td></td><td>Cerâmica</td><td>ARE RSR 5</td><td class="weight-number">0,032</td><td class="weight-number">0,040</td><td class="weight-number">0,025</td></tr>
+                        <tr><td></td><td>Cerâmica</td><td>ARE RSR 6</td><td class="weight-number">0,046</td><td class="weight-number">0,058</td><td class="weight-number">0,035</td></tr>
+                        <tr><td></td><td>Cerâmica</td><td>ARE RSR 8</td><td class="weight-number">0,082</td><td class="weight-number">0,104</td><td class="weight-number">0,063</td></tr>
+                        <tr><td></td><td>Cerâmica</td><td>ARE RSR 10</td><td class="weight-number">0,128</td><td class="weight-number">0,162</td><td class="weight-number">0,098</td></tr>
+                        <tr><td></td><td>Cerâmica</td><td>ARE RSR 12</td><td class="weight-number">0,184</td><td class="weight-number">0,233</td><td class="weight-number">0,141</td></tr>
+                        <tr><td></td><td>Cerâmica</td><td>ARE RSR 15</td><td class="weight-number">0,287</td><td class="weight-number">0,364</td><td class="weight-number">0,221</td></tr>
+
+                        <tr><td rowspan="3" class="weight-manufacturer">BRETON BIDESI</td><td></td><td>Breton</td><td>BRE S-27-09-16 FLEX</td><td class="weight-number">0,607</td><td class="weight-number">0,551</td><td class="weight-number">0,495</td></tr>
+                        <tr><td></td><td>Breton</td><td>BRE S-28-15-16 FLEX</td><td class="weight-number">0,849</td><td class="weight-number">0,766</td><td class="weight-number">0,683</td></tr>
+                        <tr><td></td><td>Breton</td><td>BRE T-27-18-16</td><td class="weight-number">0,840</td><td class="weight-number">0,780</td><td class="weight-number">0,720</td></tr>
+
+                        <tr><td rowspan="4" class="weight-manufacturer">GASPARI</td><td></td><td>Gaspari</td><td>GAS S-15-12-7</td><td class="weight-number">0,333</td><td class="weight-number">0,283</td><td class="weight-number">0,233</td></tr>
+                        <tr><td></td><td>Gaspari</td><td>GAS SS-22-12-10 FLEX</td><td class="weight-number">0,483</td><td class="weight-number">0,385</td><td class="weight-number">0,286</td></tr>
+                        <tr><td></td><td>Gaspari</td><td>GAS SX-22-25-17</td><td class="weight-number">0,536</td><td class="weight-number">0,478</td><td class="weight-number">0,420</td></tr>
+                        <tr><td></td><td>Gaspari</td><td>GAS TS-37-12-10 FLEX</td><td class="weight-number">0,656</td><td class="weight-number">0,590</td><td class="weight-number">0,523</td></tr>
+
+                        <tr><td rowspan="8" class="weight-manufacturer">HEDEL</td><td>MFH0760/MH42/MH72/MH74</td><td>Hedel</td><td>HED S-20-12-10</td><td class="weight-number">0,451</td><td class="weight-number">0,426</td><td class="weight-number">0,400</td></tr>
+                        <tr><td></td><td>Hedel</td><td>HED S-24-15-16 FLEX</td><td class="weight-number">0,752</td><td class="weight-number">0,683</td><td class="weight-number">0,614</td></tr>
+                        <tr><td>MH72</td><td>Hedel</td><td>HED S-26-15-16 FLEX</td><td class="weight-number">0,760</td><td class="weight-number">0,699</td><td class="weight-number">0,637</td></tr>
+                        <tr><td></td><td>Hedel</td><td>HED T-28-12-12 FLEX</td><td class="weight-number">0,865</td><td class="weight-number">0,773</td><td class="weight-number">0,680</td></tr>
+                        <tr><td>MH74</td><td>Hedel</td><td>HED T-28-15-16 FLEX</td><td class="weight-number">0,800</td><td class="weight-number">0,756</td><td class="weight-number">0,712</td></tr>
+                        <tr><td></td><td>Hedel</td><td>HED T-31-15-16 FLEX</td><td class="weight-number">0,856</td><td class="weight-number">0,768</td><td class="weight-number">0,680</td></tr>
+                        <tr><td>MH72</td><td>Hedel</td><td>HED T-33-15-16 FLEX</td><td class="weight-number">0,942</td><td class="weight-number">0,842</td><td class="weight-number">0,741</td></tr>
+                        <tr><td>MH72</td><td>Hedel</td><td>HED T-36-12-16 FLEX</td><td class="weight-number">0,856</td><td class="weight-number">0,768</td><td class="weight-number">0,680</td></tr>
+
+                        <tr><td class="weight-manufacturer">M.Brandão</td><td></td><td>M.Brandão</td><td>MIN T-29-16-12 FLEX</td><td class="weight-number">0,825</td><td class="weight-number">0,743</td><td class="weight-number">0,660</td></tr>
+
+                        <tr><td rowspan="2" class="weight-manufacturer">PEDRINI</td><td></td><td>Pedrini</td><td>PED DC-20-12-10 FLEX</td><td class="weight-number">0,370</td><td class="weight-number">0,335</td><td class="weight-number">0,299</td></tr>
+                        <tr><td></td><td>Pedrini</td><td>PED SV-22-14-15</td><td class="weight-number">0,386</td><td class="weight-number">0,342</td><td class="weight-number">0,297</td></tr>
+
+                        <tr><td rowspan="14" class="weight-manufacturer">RAMOS UNIVERSO</td><td></td><td>Ramos Universo</td><td>RAM DC-39-15-18 FLEX</td><td class="weight-number">1,190</td><td class="weight-number">1,020</td><td class="weight-number">0,850</td></tr>
+                        <tr><td></td><td>Ramos Universo</td><td>RAM DL-33-11-18</td><td class="weight-number">0,860</td><td class="weight-number">0,759</td><td class="weight-number">0,657</td></tr>
+                        <tr><td>PE 0503 - 45191 - 42237 - 000063</td><td>Ramos Universo</td><td>RAM S-17-11-7 FLEX</td><td class="weight-number">0,363</td><td class="weight-number">0,322</td><td class="weight-number">0,280</td></tr>
+                        <tr><td>PE0203 - 40521 - 45193 - 002151 - 001986</td><td>Ramos Universo</td><td>RAM S-21-10-11 FLEX</td><td class="weight-number">0,580</td><td class="weight-number">0,498</td><td class="weight-number">0,415</td></tr>
+                        <tr><td></td><td>Ramos Universo</td><td>RAM S-23-11-11 FLEX</td><td class="weight-number">0,530</td><td class="weight-number">0,482</td><td class="weight-number">0,434</td></tr>
+                        <tr><td></td><td>Ramos Universo</td><td>RAM S-23-15-11 FLEX</td><td class="weight-number">0,690</td><td class="weight-number">0,622</td><td class="weight-number">0,554</td></tr>
+                        <tr><td>PE 0203 - 45192</td><td>Ramos Universo</td><td>RAM SY-23-10-11 FLEX</td><td class="weight-number">0,492</td><td class="weight-number">0,435</td><td class="weight-number">0,378</td></tr>
+                        <tr><td></td><td>Ramos Universo</td><td>RAM T-29-16-12 FLEX</td><td class="weight-number">0,871</td><td class="weight-number">0,771</td><td class="weight-number">0,670</td></tr>
+                        <tr><td></td><td>Ramos Universo</td><td>RAM T-33-11-18 FLEX</td><td class="weight-number">0,700</td><td class="weight-number">0,675</td><td class="weight-number">0,650</td></tr>
+                        <tr><td></td><td>Ramos Universo</td><td>RAM T-33-11-23 FLEX</td><td class="weight-number">0,695</td><td class="weight-number">0,678</td><td class="weight-number">0,660</td></tr>
+                        <tr><td></td><td>Ramos Universo</td><td>RAM T-33-15-18 FLEX</td><td class="weight-number">0,910</td><td class="weight-number">0,835</td><td class="weight-number">0,760</td></tr>
+                        <tr><td>PE0102 - 40520 - 45192 - 001992 002152</td><td>Ramos Universo</td><td>RAM T 34-10-23 FLEX</td><td class="weight-number">0,957</td><td class="weight-number">0,821</td><td class="weight-number">0,684</td></tr>
+                        <tr><td></td><td>Ramos Universo</td><td>RAM T-37-11-23 FLEX</td><td class="weight-number">0,795</td><td class="weight-number">0,755</td><td class="weight-number">0,715</td></tr>
+                        <tr><td>PE 0103 - 45193</td><td>Ramos Universo</td><td>RAM TY-36-10-23 FLEX</td><td class="weight-number">0,834</td><td class="weight-number">0,738</td><td class="weight-number">0,642</td></tr>
+
+                        <tr><td class="weight-manufacturer">SERRAMAR</td><td></td><td>Especial</td><td>SER S-40-12-11</td><td class="weight-number">0,875</td><td class="weight-number">0,788</td><td class="weight-number">0,700</td></tr>
+
+                        <tr><td rowspan="3" class="weight-manufacturer">VENTOWAG</td><td></td><td>Ventowag</td><td>VEN S-20-12-8</td><td class="weight-number">0,462</td><td class="weight-number">0,429</td><td class="weight-number">0,396</td></tr>
+                        <tr><td></td><td>Ventowag</td><td>VEN S-38-12-16 FLEX</td><td class="weight-number">0,842</td><td class="weight-number">0,780</td><td class="weight-number">0,718</td></tr>
+                        <tr><td></td><td>Ventowag</td><td>VEN T-36-12-16</td><td class="weight-number">0,787</td><td class="weight-number">0,709</td><td class="weight-number">0,630</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Aplicações Indicadas</h3>
+                    <p>Conteúdo inicial reservado para apresentar os segmentos, equipamentos e condições de operação recomendados para os perfis da linha TPU.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Características e Benefícios</h3>
+                    <p>Área preparada para destacar propriedades técnicas, diferenciais do material, desempenho, resistência e benefícios da nova linha.</p>
+                </div>
+            </div>
+
+            <div class="development-panel">
+                <i class="bi bi-rulers" aria-hidden="true"></i>
+                <h2>Catálogo TPU em desenvolvimento</h2>
+                <p>Esta base receberá as famílias de produtos, imagens, medidas, propriedades técnicas e demais informações comerciais da linha TPU.</p>
+            </div>
+
+            <div class="legacy-content" aria-hidden="true">
+            <div class="product-header">
+                <h2 class="section-title">Perfil Redondo</h2>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="highlight">Propriedades</th>
+                            <th>RB</th>
+                            <th>RBS</th>
+                            <th>RBA<br><span class="term-soft">(ÁSPERO)</span></th>
+                            <th>RBAS<br><span class="term-soft">(ÁSPERO)</span></th>
+                            <th>RG</th>
+                            <th>RGS</th>
+                            <th>RGA<br><span class="term-soft">(ÁSPERO)</span></th>
+                            <th>RGAS<br><span class="term-soft">(ÁSPERO)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="profile-icon-row">
+                            <td colspan="2" class="profile-diagram-cell">
+                                <img src="imagens/perfil-redondo.png?v=20260520" alt="Desenho técnico do perfil redondo">
+                            </td>
+                            <td><span class="profile-dot blue"></span></td>
+                            <td><span class="profile-dot blue join"></span></td>
+                            <td><span class="profile-dot blue"></span></td>
+                            <td><span class="profile-dot blue join"></span></td>
+                            <td><span class="profile-dot green"></span></td>
+                            <td><span class="profile-dot green join"></span></td>
+                            <td><span class="profile-dot green"></span></td>
+                            <td><span class="profile-dot green join"></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Dureza</td>
+                            <td>85A</td><td>85A</td><td>85A</td><td>85A</td>
+                            <td>85A / 90A</td><td>85A / 90A</td><td>85A / 90A</td><td>85A / 90A</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Temperatura de Trabalho</td>
+                            <td>-10° a 65°</td><td>-10° a 65°</td><td>-10° a 65°</td><td>-10° a 65°</td>
+                            <td>-10° a 65°<br>-10° a 80°</td><td>-10° a 65°<br>-10° a 80°</td>
+                            <td>-10° a 65°<br>-10° a 80°</td><td>-10° a 65°<br>-10° a 80°</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Coeficiente de Atrito</td>
+                            <td>0.35</td><td>0.35</td><td>0.35</td><td>0.35</td>
+                            <td>0.35</td><td>0.35</td><td>0.35</td><td>0.35</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Sanitário</td>
+                            <td><span class="badge">Sim</span></td>
+                            <td><span class="badge">Sim</span></td>
+                            <td><span class="badge">Sim</span></td>
+                            <td><span class="badge">Sim</span></td>
+                            <td>-</td><td>-</td><td>-</td><td>-</td>
+                        </tr>
+                        <tr class="sub-header">
+                            <th>Diâmetro (mm)</th>
+                            <th>Polegada</th>
+                            <th>DMP<br>(mm)</th><th>DMP<br>(mm)</th><th>DMP<br>(mm)</th><th>DMP<br>(mm)</th>
+                            <th>DMP<br>(mm)</th><th>DMP<br>(mm)</th><th>DMP<br>(mm)</th><th>DMP<br>(mm)</th>
+                        </tr>
+                        <tr><td>4</td><td>-</td><td>35</td><td>-</td><td>35</td><td>-</td><td>35</td><td>-</td><td>35</td><td>-</td></tr>
+                        <tr><td>5</td><td>3/16</td><td>45</td><td>-</td><td>45</td><td>-</td><td>45</td><td>-</td><td>45</td><td>-</td></tr>
+                        <tr><td>6.3</td><td>1/4</td><td>54</td><td>54</td><td>54</td><td>54</td><td>54</td><td>54</td><td>54</td><td>54</td></tr>
+                        <tr><td>8</td><td>5/16</td><td>72</td><td>72</td><td>72</td><td>72</td><td>72</td><td>72</td><td>72</td><td>72</td></tr>
+                        <tr><td>9.5</td><td>3/8</td><td>80</td><td>80</td><td>80</td><td>80</td><td>80</td><td>80</td><td>80</td><td>80</td></tr>
+                        <tr><td>10</td><td>-</td><td>89</td><td>89</td><td>89</td><td>89</td><td>89</td><td>89</td><td>89</td><td>89</td></tr>
+                        <tr><td>12</td><td>-</td><td>108</td><td>108</td><td>108</td><td>108</td><td>108</td><td>108</td><td>108</td><td>108</td></tr>
+                        <tr><td>12.7</td><td>1/2</td><td>119</td><td>119</td><td>119</td><td>119</td><td>119</td><td>119</td><td>119</td><td>119</td></tr>
+                        <tr><td>15</td><td>-</td><td>135</td><td>135</td><td>135</td><td>135</td><td>135</td><td>135</td><td>135</td><td>135</td></tr>
+                        <tr><td>16.2</td><td>5/8</td><td>148</td><td>148</td><td>148</td><td>148</td><td>148</td><td>148</td><td>148</td><td>148</td></tr>
+                        <tr><td>18</td><td>-</td><td>175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>175</td><td>175</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="product-header">
+                <h2 class="section-title">Perfil Redondo</h2>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="highlight">Propriedades</th>
+                            <th>RBL</th>
+                            <th>RBLS</th>
+                            <th>RBLA<br><span class="term-soft">(ÁSPERO)</span></th>
+                            <th>RBLAS<br><span class="term-soft">(ÁSPERO)</span></th>
+                            <th>RO</th>
+                            <th>ROS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="profile-icon-row">
+                            <td colspan="2" class="profile-diagram-cell">
+                                <img src="imagens/perfil-redondo.png?v=20260520" alt="Desenho técnico do perfil redondo">
+                            </td>
+                            <td><span class="profile-dot black"></span></td>
+                            <td><span class="profile-dot black join"></span></td>
+                            <td><span class="profile-dot black"></span></td>
+                            <td><span class="profile-dot black join"></span></td>
+                            <td><span class="profile-dot orange"></span></td>
+                            <td><span class="profile-dot orange join"></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Dureza</td>
+                            <td>85A / 90A</td><td>85A / 90A</td><td>85A / 90A</td><td>85A / 90A</td><td>85A</td><td>85A</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Temperatura de Trabalho</td>
+                            <td>-10° a 65°<br>-10° a 80°</td><td>-10° a 65°<br>-10° a 80°</td>
+                            <td>-10° a 65°<br>-10° a 80°</td><td>-10° a 65°<br>-10° a 80°</td><td>-10° a 65°</td><td>-10° a 65°</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Coeficiente de Atrito</td>
+                            <td>0.35</td><td>0.35</td><td>0.35</td><td>0.35</td><td>0.35</td><td>0.35</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Sanitário</td>
+                            <td>-</td><td>-</td><td>-</td><td>-</td><td><span class="badge">Sim</span></td><td><span class="badge">Sim</span></td>
+                        </tr>
+                        <tr class="sub-header">
+                            <th>Diâmetro (mm)</th>
+                            <th>Polegada</th>
+                            <th>DMP<br>(mm)</th><th>DMP<br>(mm)</th><th>DMP<br>(mm)</th><th>DMP<br>(mm)</th>
+                            <th>DMP<br>(mm)</th><th>DMP<br>(mm)</th>
+                        </tr>
+                        <tr><td>4</td><td>-</td><td>35</td><td>-</td><td>35</td><td>-</td><td>-</td><td>-</td></tr>
+                        <tr><td>5</td><td>3/16</td><td>45</td><td>-</td><td>45</td><td>-</td><td>-</td><td>-</td></tr>
+                        <tr><td>6.3</td><td>1/4</td><td>54</td><td>54</td><td>54</td><td>54</td><td>54</td><td>54</td></tr>
+                        <tr><td>8</td><td>5/16</td><td>72</td><td>72</td><td>72</td><td>72</td><td>72</td><td>72</td></tr>
+                        <tr><td>9.5</td><td>3/8</td><td>80</td><td>80</td><td>80</td><td>80</td><td>80</td><td>80</td></tr>
+                        <tr><td>10</td><td>-</td><td>89</td><td>89</td><td>89</td><td>89</td><td>-</td><td>-</td></tr>
+                        <tr><td>12</td><td>-</td><td>108</td><td>108</td><td>108</td><td>108</td><td>108</td><td>108</td></tr>
+                        <tr><td>12.7</td><td>1/2</td><td>119</td><td>119</td><td>119</td><td>119</td><td>119</td><td>119</td></tr>
+                        <tr><td>15</td><td>-</td><td>135</td><td>135</td><td>135</td><td>135</td><td>-</td><td>-</td></tr>
+                        <tr><td>16.2</td><td>5/8</td><td>148</td><td>148</td><td>148</td><td>148</td><td>-</td><td>-</td></tr>
+                        <tr><td>18</td><td>-</td><td>175</td><td>175</td><td>175</td><td>175</td><td>-</td><td>-</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="product-header">
+                <h2 class="section-title">Perfis Especiais</h2>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="highlight">Propriedades</th>
+                            <th>SPU</th>
+                            <th>SPQ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="profile-icon-row">
+                            <td colspan="2" class="profile-side-label">Special Profiles</td>
+                            <td><img src="imagens/spu.jpg?v=20260520" alt="Perfil especial SPU" class="profile-table-image"></td>
+                            <td><img src="imagens/spq.jpg?v=20260520" alt="Perfil especial SPQ" class="profile-table-image"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Dureza</td>
+                            <td>85A</td><td>85A</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Temperatura de Trabalho</td>
+                            <td>-10° a 65°</td><td>-10° a 65°</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Coeficiente de Atrito</td>
+                            <td>0.35</td><td>0.35</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Sanitário</td>
+                            <td><span class="badge">Sim</span></td>
+                            <td><span class="badge">Sim</span></td>
+                        </tr>
+                        <tr class="sub-header">
+                            <th colspan="2">Especificações</th>
+                            <th>DMP<br>(mm)</th><th>DMP<br>(mm)</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">DMP<br>(mm)</td>
+                            <td>120</td><td>120</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Dimensão</td>
+                            <td>18 x 11.8</td><td>11.8 x 11.8</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="highlight">Propriedades</th>
+                            <th>RB-HL</th>
+                            <th>RC-HL</th>
+                            <th>CONECTOR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="profile-icon-row">
+                            <td colspan="2" class="profile-side-label">Special Profiles</td>
+                            <td><img src="imagens/azul.jpg?v=20260520" alt="Perfil RB-HL" class="profile-table-image"></td>
+                            <td><img src="imagens/transparente.jpg?v=20260520" alt="Perfil RC-HL" class="profile-table-image"></td>
+                            <td><img src="imagens/conector-final.png?v=20260520" alt="Conector para perfil" class="profile-table-image wide"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Dureza</td>
+                            <td>85A</td><td>85A</td><td>-</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Temperatura de Trabalho</td>
+                            <td>-10° a 65°</td><td>-10° a 65°</td><td>-10° a 65°</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Coeficiente de Atrito</td>
+                            <td>0.35</td><td>0.35</td><td>-</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Sanitário</td>
+                            <td><span class="badge">Sim</span></td><td><span class="badge">Sim</span></td><td><span class="badge">Sim</span></td>
+                        </tr>
+                        <tr class="sub-header">
+                            <th>Diâmetro (mm)</th>
+                            <th>Polegada</th>
+                            <th>DMP<br>(mm)</th>
+                            <th>DMP<br>(mm)</th>
+                            <th>Disponibilidade</th>
+                        </tr>
+                        <tr>
+                            <td>6.3</td><td>1/4</td><td>54</td><td>54</td><td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>8</td><td>5/16</td><td>72</td><td>72</td><td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>9.5</td><td>3/8</td><td>80</td><td>80</td><td>✓</td>
+                        </tr>
+                        <tr>
+                            <td>12.7</td><td>1/2</td><td>119</td><td>119</td><td>✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="product-header">
+                <h2 class="section-title">Perfil em V</h2>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="highlight">Propriedades</th>
+                            <th>VB</th>
+                            <th>VBLS</th>
+                            <th>VGS</th>
+                            <th>VBLS-MG</th>
+                            <th>VGS-MG</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="profile-icon-row">
+                            <td colspan="2" class="profile-diagram-cell">
+                                <img src="imagens/perfil-em-v.png?v=20260520" alt="Desenho técnico do perfil em V">
+                            </td>
+                            <td><span class="profile-image-with-t profile-vb"><img src="imagens/Imagem11.png?v=20260520" alt="Perfil em V VB" class="profile-table-image"></span></td>
+                            <td><span class="profile-image-with-t"><img src="imagens/Imagem12.png?v=20260520" alt="Perfil em V VBLS" class="profile-table-image"></span></td>
+                            <td><span class="profile-image-with-t"><img src="imagens/Imagem13.png?v=20260520" alt="Perfil em V VGS" class="profile-table-image"></span></td>
+                            <td><span class="profile-image-with-topbar profile-image-with-t"><img src="imagens/Imagem14.png?v=20260520" alt="Perfil em V VBLS-MG" class="profile-table-image"></span></td>
+                            <td><span class="profile-image-with-topbar profile-image-with-t"><img src="imagens/Imagem15.png?v=20260520" alt="Perfil em V VGS-MG" class="profile-table-image"></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Dureza</td>
+                            <td>85A</td><td>85A / 90A</td><td>85A / 90A</td><td>85A / 90A</td><td>85A / 90A</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Temperatura de Trabalho</td>
+                            <td>-10° a 65°</td>
+                            <td>-10° a 65°<br>-10° a 80°</td>
+                            <td>-10° a 65°<br>-10° a 80°</td>
+                            <td>-10° a 65°<br>-10° a 80°</td>
+                            <td>-10° a 65°<br>-10° a 80°</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Coeficiente de Atrito</td>
+                            <td>0.35</td><td>0.35</td><td>0.35</td><td>0.35</td><td>0.35</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Sanitário</td>
+                            <td><span class="badge">Sim</span></td><td>-</td><td>-</td><td>-</td><td>-</td>
+                        </tr>
+                        <tr class="sub-header">
+                            <th>Modelo</th>
+                            <th>L x A (mm)</th>
+                            <th>DMP<br>(mm)</th><th>DMP<br>(mm)</th><th>DMP<br>(mm)</th><th>DMP<br>(mm)</th><th>DMP<br>(mm)</th>
+                        </tr>
+                        <tr>
+                            <td>13/A</td><td>13 x 8</td><td>76</td><td>76</td><td>76</td><td>76</td><td>76</td>
+                        </tr>
+                        <tr>
+                            <td>17/B</td><td>17 x 11.5</td><td>110</td><td>110</td><td>110</td><td>110</td><td>110</td>
+                        </tr>
+                        <tr>
+                            <td>22/C</td><td>22 x 14.5</td><td>138</td><td>138</td><td>138</td><td>138</td><td>138</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="product-header">
+                <h2 class="section-title">Perfil Pentagonal</h2>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="highlight">Propriedades</th>
+                            <th>PGS</th>
+                            <th>PBLS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="profile-icon-row">
+                            <td colspan="2" class="profile-diagram-cell">
+                                <img src="imagens/perfil-pentagonal.png?v=20260520" alt="Desenho técnico do perfil pentagonal">
+                            </td>
+                            <td><span class="profile-image-with-t profile-penta"><img src="imagens/Imagem17.png?v=20260520" alt="Perfil pentagonal PGS" class="profile-table-image"></span></td>
+                            <td><span class="profile-image-with-t profile-penta"><img src="imagens/Imagem18.png?v=20260520" alt="Perfil pentagonal PBLS" class="profile-table-image"></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Dureza</td>
+                            <td>85A / 90A</td><td>85A / 90A</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Temperatura de Trabalho</td>
+                            <td>-10° a 65°<br>-10° a 80°</td><td>-10° a 65°<br>-10° a 80°</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Coeficiente de Atrito</td>
+                            <td>0.35</td><td>0.35</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="row-header">Sanitário</td>
+                            <td>-</td><td>-</td>
+                        </tr>
+                        <tr class="sub-header">
+                            <th>Modelo</th>
+                            <th>L x A (mm)</th>
+                            <th>DMP<br>(mm)</th><th>DMP<br>(mm)</th>
+                        </tr>
+                        <tr>
+                            <td>17/B</td><td>17 x 19.5</td><td>205</td><td>205</td>
+                        </tr>
+                        <tr>
+                            <td>22/C</td><td>22 x 24.5</td><td>258</td><td>258</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+        </div>
+
+        <footer class="contact-footer" aria-label="Rodapé de contato PerfilFlex">
+            <div class="contact-footer-main">
+
+                <!-- Coluna 1: Logo -->
+                <div class="footer-brand">
+                    <div class="footer-brand-card">
+                        <img src="../imagens/logo-perfilflex.jpeg.jpeg?v=20260611" alt="Logo PerfilFlex">
+                    </div>
+                </div>
+
+                <div class="footer-divider" aria-hidden="true"></div>
+
+                <!-- Coluna 2: Contato -->
+                <div class="footer-contact">
+                    <div class="footer-contact-line">
+                        <span class="footer-icon wa" aria-hidden="true"><i class="bi bi-whatsapp"></i></span>
+                        <span>+55 11 91329-0483</span>
+                    </div>
+                    <div class="footer-contact-line">
+                        <span class="footer-icon" aria-hidden="true"><i class="bi bi-telephone"></i></span>
+                        <span>+55 11 2325-6211</span>
+                    </div>
+                    <div class="footer-contact-line email-line">
+                        <span class="footer-icon" aria-hidden="true"><i class="bi bi-envelope"></i></span>
+                        <span>comercial@perfilflex.com</span>
+                    </div>
+                </div>
+
+                <div class="footer-divider" aria-hidden="true"></div>
+
+                <!-- Coluna 3: Meta -->
+                <div class="footer-meta">
+                    <div class="footer-meta-item">
+                        <span class="footer-meta-label"><i class="bi bi-geo-alt-fill"></i> Localização</span>
+                        <span class="footer-meta-value">Santo André | SP | Brasil</span>
+                    </div>
+                    <div class="footer-meta-item">
+                        <span class="footer-meta-label"><i class="bi bi-globe2"></i> Website</span>
+                        <span class="footer-meta-value"><a href="https://www.perfilflex.com" target="_blank" rel="noopener">www.perfilflex.com</a></span>
+                    </div>
+                    <div class="footer-meta-item">
+                        <span class="footer-meta-label"><i class="bi bi-leaf-fill"></i> Propósito</span>
+                        <span class="footer-meta-value">Compromisso com a sustentabilidade</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer-accent" aria-hidden="true"></div>
+        </footer>
+    </div>
+
+</body>
+</html>
