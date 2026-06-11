@@ -13,3 +13,7 @@ desktop.ini
 *.bak
 *.swp
 *~
+
+# Local publish/test artifacts
+.autopublish-*.log
+_test-*.pdf
